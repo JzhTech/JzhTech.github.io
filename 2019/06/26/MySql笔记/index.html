@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="泽恒">
 <meta property="og:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-26T08:24:27.967Z">
+<meta property="og:updated_time" content="2019-06-29T09:13:35.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql笔记">
 <meta name="twitter:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
@@ -196,7 +196,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表语法"><span class="toc-text">创建表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的数据字段类型"><span class="toc-text">常用的数据字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据字段的属性"><span class="toc-text">数据字段的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li></ol>
   </div>
 
 
@@ -336,9 +336,9 @@ ga('send', 'pageview');
 <li>进入数据库<br><code>mysql -uroot -proot</code></li>
 <li>创建一个数据库<br><code>create database jzhdb;</code></li>
 <li>使用数据库<br><code>use jzhdb;</code></li>
-<li>导入数据库文件 jzhdb.sql<br><code>source 将数据库文件直接拖拽到此处回车</code></li>
+<li>导入数据库文件 jzhdb.sql<br><code>source 将数据库文件直接拖拽到此处，将路径两边的引号删除再回车</code></li>
 </ol>
-<h3 id="命令中出现短路问题-出现—-gt"><a href="#命令中出现短路问题-出现—-gt" class="headerlink" title="命令中出现短路问题(出现—&gt;)"></a>命令中出现短路问题(出现—&gt;)</h3><p><code>\c 回车</code></p>
+<h3 id="命令中出现短路问题-出现—-gt"><a href="#命令中出现短路问题-出现—-gt" class="headerlink" title="命令中出现短路问题(出现—&gt;)"></a>命令中出现短路问题(出现—&gt;)</h3><p><code>\c 回车或ctrl+c</code></p>
 <h3 id="表描述"><a href="#表描述" class="headerlink" title="表描述"></a>表描述</h3><ol>
 <li>查看当前数据库中表格<br><code>show tables;</code></li>
 <li>查看某个表的表结构<br><code>desc 表名;</code></li>
@@ -356,13 +356,19 @@ ga('send', 'pageview');
 <li><p>退出mysql</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit/quit/\q/ctrl+c</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] 数据库名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] 数据库名;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>查看数据库系统中有多少数据库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用某个数据库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看当前数据库中多少表</p>
+<li><p>查看当前数据库中多少表(先use使用某个数据库后)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在别的数据库中查看别的数据库的表</p>
@@ -376,7 +382,346 @@ ga('send', 'pageview');
 
 </li>
 </ul>
-<h3 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h3>
+<h3 id="创建表语法"><a href="#创建表语法" class="headerlink" title="创建表语法"></a>创建表语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">create table `表名`(</span><br><span class="line">	`字段名1` 列类型[属性] [索引] [注释],</span><br><span class="line">	`字段名2` 列类型[属性] [索引] [注释],</span><br><span class="line">	... ...</span><br><span class="line">	`字段名n` 列类型[属性] [索引] [注释]</span><br><span class="line">)[表类型][表字符集][注释];</span><br><span class="line"></span><br><span class="line">``：反引号，可写可不写，与单引号不同</span><br><span class="line"></span><br><span class="line">带有[]的也是可选的</span><br><span class="line"></span><br><span class="line">一般创建表也没有这么详细，简写就行</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">	CREATE TABLE `students` (</span><br><span class="line">  		`sid` char(10) PRIMARY KEY,</span><br><span class="line">  		`sname` varchar(50) NOT NULL,</span><br><span class="line">  		`sex` char(1) NOT NULL,</span><br><span class="line">  		`dob` date NOT NULL,</span><br><span class="line">  		`phone` varchar(30)</span><br><span class="line">  	);</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用的数据字段类型"><a href="#常用的数据字段类型" class="headerlink" title="常用的数据字段类型"></a>常用的数据字段类型</h3><ul>
+<li>数值类型<ul>
+<li>int:整数</li>
+<li>double:双精度浮点数</li>
+</ul>
+</li>
+<li>字符串类型<ul>
+<li>char:固定字符串，规定多大字节就是多大，用了多少剩余的浪费了</li>
+<li>varchar:可变字符串，只给实际占用的空间，用了多少分配多少剩余的不分配了</li>
+</ul>
+</li>
+<li>日期和时间类型:datetime,给值时格式为YY-MM-DD hh:mm:ss</li>
+<li>null:数据库中null不是一个值，代表什么都没有</li>
+</ul>
+<h3 id="数据字段的属性"><a href="#数据字段的属性" class="headerlink" title="数据字段的属性"></a>数据字段的属性</h3><ul>
+<li>unsigned<ul>
+<li>不允许为负数</li>
+</ul>
+</li>
+<li>zerofill<ul>
+<li>不足位数的用0填充，如int(3)，5则为005</li>
+</ul>
+</li>
+<li>auto_increment<ul>
+<li>自动增长的，通常设置主键为整数类型，自动增长</li>
+</ul>
+</li>
+<li>null和not null<ul>
+<li>如果为null，则不能插入该字段值，什么都没有</li>
+<li>如果为not null，则必须有值</li>
+</ul>
+</li>
+<li>default<ul>
+<li>默认的，可设置默认值，如果不赋值则直接为默认值</li>
+</ul>
+</li>
+</ul>
+<h3 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h3><p><font color="red"><b><em>mysql中sql语句不分大小写，语句以分号结尾，引号只用单引号，但是mysql数据库中支持双引号</em></b></font></p>
+<ul>
+<li><p>查询字段</p>
+<ul>
+<li>当前数据库中查询其他数据库中表的字段:<code>select 字段名 from 数据库名.表名;</code></li>
+<li>当前数据库中查询其中表的字段：<ul>
+<li>单个字段：<code>select 字段名 from 表名;</code></li>
+<li>多个字段：<code>select 字段1,字段2..字段n from 表名;</code></li>
+<li>所有字段：查询所有不建议用*，可读性差，并且编译时*会转换为所有字段名，效率差.<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select 全部字段名 from 表名;</span><br><span class="line">select * from 表名;</span><br></pre></td></tr></table></figure></code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查询字段时做计算</p>
+<ul>
+<li>直接计算：<code>select empno,sal*12 from emp;</code></li>
+<li>as重命名做计算的字段：<code>select empno,sal*12 as yearsal from emp;</code></li>
+<li>as可以省略</li>
+</ul>
+</li>
+<li><p><strong>记住，select时进行的sal*12等类似的操作，不会改变数据库中的信息值，只是显示出来的形式被改变了</strong></p>
+</li>
+</ul>
+<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><ul>
+<li><p>条件查询需要用到where语句，where必须放到from语句表的后面<br>支持如下运算符</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>&lt;&gt;或!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>between…and…</td>
+<td>两个值之间，<font color="red"><b>等同于 &gt;=and&lt;=</b></font></td>
+</tr>
+<tr>
+<td>is null</td>
+<td>为null(is not null不为空)</td>
+</tr>
+<tr>
+<td>and</td>
+<td>并且</td>
+</tr>
+<tr>
+<td>or</td>
+<td>或者</td>
+</tr>
+<tr>
+<td>in</td>
+<td>包含，相当于多个or(not in 不在这个范围中)</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not可以取非，主要用来is或in中</td>
+</tr>
+<tr>
+<td>like</td>
+<td>like称为模糊查询，支持%或下划线_匹配<br>%匹配任意个字符<br>下划线，一个下划线只匹配一个字符</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>查找emp表中工资等于5000的工号，工名，工资(=,&gt;=,&lt;=,&lt;,&gt;,!=用法)<br><code>select empno,ename,sal from emp where sal = 5000;</code><br>执行顺序：from emp —— where sal = 5000 —— select empno，ename，sal</p>
+</li>
+<li><p>找出工资大于等于3000并且小于等于5000(between…and…用法)</p>
+<ul>
+<li>应用在数字上面<br><code>select empno,ename,sal from emp where sal &gt;= 3000 and sal &lt;= 5000;</code><br><code>select empno,ename,sal from emp where sal between 3000 and 5000;</code><br>用between的话效果等同，两边都是闭区间.</li>
+<li>应用在字符上面(了解)<br><code>select ename from emp where ename between &#39;A&#39; and &#39;L&#39;;</code><br>用在字符上的话是左闭右开.</li>
+</ul>
+</li>
+<li><p>找出员工补助是null的工名(is,not用法)</p>
+<ul>
+<li>错误写法<br><code>select ename from emp where comm = null;</code><br>前面说过，null不是一个值，他代表啥都没有，=后面是跟值的，不可行<br>正确写法：<code>select ename from emp where comm is null;</code><br>不为空则：<code>select ename from emp where comm is not null;</code></li>
+</ul>
+</li>
+<li><p>找出工作岗位是java和mysql的员工(or用法)<br><code>select ename from emp where job = &#39;java&#39; or job = &#39;mysql&#39;;</code></p>
+</li>
+<li><p>找到工资大于1800的员工,要求部门编号是20或者30(and用法以及and和or的优先级)</p>
+<ul>
+<li>错误写法<br><code>select empno,ename,sal from emp where sal&gt;1800 and depto = 20 or deptno = 30;</code><br>and优先级大于or，所以这里是找到了sal&gt;1800 and depto = 20的员工或deptno = 30的员工</li>
+<li>正确写法<br><code>select empno,ename,sal from emp where sal&gt;1800 and (depto = 20 or deptno = 30);</code></li>
+</ul>
+</li>
+<li><p>找出工作岗位和manger和工作岗位是salesman的员工(in,not用法)<br><code>select ename,job from emp where job in(&#39;manger&#39;,&#39;salesman&#39;);</code><br>括号中不是区间，而是选项.<br><code>select ename,job from emp where job not in(&#39;manger&#39;,&#39;salesman&#39;);</code><br>加not，排除这两个岗位.</p>
+</li>
+<li><p>找出所有名字里含有o的(like用法）<br><code>select ename from emp where ename like &#39;%o%&#39;;</code></p>
+</li>
+</ul>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><font color="red">排序采用order by子句，order by后面跟上排序字段，排序字段可以放多个，多个采用逗号间隔，order by默认采用升序，如果存在where子句那么order by必须放到where语句的后面</font></p>
+<ul>
+<li><strong>示例</strong><ul>
+<li><code>select ename,sal from emp order by sal;</code><br>查找ename和sal从emp表中，按照sal排序，默认asc升序排序.</li>
+<li><code>select ename,sal from emp order by sal asc;</code><br>查找ename和sal从emp表中，按照sal进行升序排序.</li>
+<li><code>select ename,sal from emp order by sal desc;</code><br>查找ename和sal从emp表中，按照sal进行降序排序.</li>
+<li><code>select ename,sal from emp order by sal desc，ename asc;</code><br>如果按sal降序排序，出现sal相同的，则按ename升序排序.</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据处理函数-单行处理函数"><a href="#数据处理函数-单行处理函数" class="headerlink" title="数据处理函数/单行处理函数"></a>数据处理函数/单行处理函数</h3><table>
+<thead>
+<tr>
+<th>lower</th>
+<th>转换小写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>upper</td>
+<td>转换大写</td>
+</tr>
+<tr>
+<td><font color="red">substr</font></td>
+<td>取子串<font color="red">(substr(被截取的字符串，起始下标，截取的长度))</font></td>
+</tr>
+<tr>
+<td>length</td>
+<td>取长度</td>
+</tr>
+<tr>
+<td><font color="red">trim</font></td>
+<td>去空格</td>
+</tr>
+<tr>
+<td>str_to_date(后面讲)</td>
+<td>将字符串转换成日期</td>
+</tr>
+<tr>
+<td>date_format(后面讲)</td>
+<td>格式化日期</td>
+</tr>
+<tr>
+<td>format(几乎不用)</td>
+<td>设置千分位</td>
+</tr>
+<tr>
+<td>round</td>
+<td>四舍五入</td>
+</tr>
+<tr>
+<td>rand()</td>
+<td>生成随机数</td>
+</tr>
+<tr>
+<td><font color="red">ifnull</font></td>
+<td>可以将null转换成一个具体值</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>转小写：<code>select lower(ename) as ename from emp;</code><br>如果数据库中存放的ename都是大写，这样的话查找显示出来就是小写了，但注意，数据库中还是大写，只是改变了显示方式，前面说过.<br>还有这里一定要用as取个别名，不然显示出来是lower(ename),不好看</p>
+</li>
+<li><p>转大写：<code>select upper(ename) as ename from emp;</code></p>
+</li>
+<li><p>截取字符串：<code>select substr(ename,2,3) from emp;</code><br>截取查询出来的ename值的字符串，从下标2开始截取3个显示.<br>查找员工名字第二个字符串为A的：<code>select ename from emp where substr(ename,2,1) = &#39;A&#39;;</code></p>
+</li>
+<li><p>获取字符串长度：<code>select length(ename) as enamelength from emp;</code></p>
+</li>
+<li><p>去空格：<code>select ename from emp where ename = trim(&#39;  SMITH     &#39;);</code><br>有时候查找ename等于SMITH的时候，多输入了空格查不到，所以用trim</p>
+</li>
+<li><p>round(被四舍五入的数，四舍五入到哪一位)</p>
+<ul>
+<li>默认:<code>select round(123.456);</code><br>显示123，默认0位，只留整数位</li>
+<li><code>select round(123.456,1);</code><br>显示123.5，保留一位小数</li>
+<li><code>select round(123.456,-1);</code><br>显示120，0位是123，-1位则去掉一位，去掉的地方变为0，所以120</li>
+</ul>
+</li>
+<li><p>rand():<code>select rand();</code><br>生成随机数</p>
+</li>
+<li><p>ifnull空值处理函数，比如客户需要让员工补助是null的显示为0<br><code>select ename ,ifnull(comm,0) as comm from emp;</code><br>因为在数据库中null参加运算的话，结果都为null，所以用这个函数处理<br><code>select sal + ifnull(comm,100) from emp;</code><br>比如计算年薪：<code>select ename,(sal+ifnull(comm,0))*12 as yearsal from emp;</code></p>
+</li>
+</ul>
+<h3 id="日期处理-str-to-date"><a href="#日期处理-str-to-date" class="headerlink" title="日期处理_str_to_date"></a>日期处理_str_to_date</h3><ol>
+<li><p>数据库中的常用数据类型</p>
+<ul>
+<li>int         整数型</li>
+<li>varchar     可变长度字符串</li>
+<li>char         定长字符串</li>
+<li>date         日期类型</li>
+<li>double     浮点型</li>
+<li>……</li>
+</ul>
+</li>
+<li><p>关于MYSQL中的日期处理</p>
+<ul>
+<li>每一个数据库处理日期的时候，采用的机制都是不同的，日期处理都有自己的一套机制.所以在实际的开发中，表中的字段定义为DATE类型，这种情况很少.因为一旦使用日期类型，那么java程序将不能够通用。所以在实际开发中，一般都会使用”日期字符串”来表示日期。</li>
+<li>日期是数据库本身的特色，也是数据库本身机制中的一个重要内容，所以还是需要掌握。</li>
+</ul>
+</li>
+<li><p>MYSQL数据库管理系统中对日期的处理提供了两个重要的函数</p>
+<ul>
+<li>str_to_date</li>
+<li>date_format</li>
+</ul>
+</li>
+<li><p>str_to_date</p>
+<ul>
+<li><p>该函数的作用是：将”日期字符串”转换成”日期类型”数据.【varchar ————&gt; date】</p>
+</li>
+<li><p>该函数的执行结果是DATE类型</p>
+</li>
+<li><p>该函数的使用格式：</p>
+<pre><code>str_to_date(&apos;日期字符串&apos;,&apos;日期格式&apos;)</code></pre></li>
+<li><p>关于MYSQL中的日期格式：</p>
+<pre><code>回顾java中的日期格式：
+        yyyy    年
+        MM         月
+        dd         日
+        HH         时
+        mm         分
+        ss         秒
+        sss     毫秒
+
+java中将字符串转换成日期类型：
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+        Date date = sdf.parse(&quot;1970-10-10&quot;);
+
+MYSQL的日期格式：
+        %Y         年
+        %m         月
+        %d         日
+        %H         时
+        %i         分
+        %s         秒</code></pre><ul>
+<li><p>案例：查询出1981-12-17入职的员工,创建该表时设置的字段hiredate是DATE类型的</p>
+<pre><code>`select ename,hiredate from emp where hiredate = &apos;1981-12-17&apos;;`
+这样本该不可以的，因为hiredate是DATE类型，而我们写的是字符串，但是他自动转型成DATE类型了.因为MYSQL默认的日期格式是：%Y-%m_%d,以上的日期字符串&apos;1981-12-17&apos;正好和默认的日期格式一样，存在了自动类型转换，自动将日期字符串转换成了日期类型，所以以上查询可以查询出结果.
+
+`select ename,hiredate from emp where hiredate = &apos;12-17-1980&apos;;`
+这样会有警告【错误】发生，因为hiredate是date类型，&apos;12-17-1980&apos;是一个字符串，类型不匹配，而且他的格式和mysql默认的格式不同无法自动转型.
+
+纠正以上SQL语句的错误：
+`select ename,hiredate from emp where hiredate = str_to_date(&apos;12-17-1980&apos;,&apos;%m-%d_%Y&apos;);`</code></pre></li>
+<li><p>案例</p>
+<pre><code>+ 创建学生表
+create table t_student(
+    id int(10),
+    name varchar(32),
+    birth date
+);
+
++ 插入数据
+insert into t_student(id,name,birth) values(1,&apos;jhh&apos;,&apos;1996-10-20&apos;);
+
++ 以上可以执行，&apos;1996-10-20&apos;虽然是一个varchar类型，但是由于格式和MYSQL数据库默认的日期格式相同，所以存在自动类型转换.
+
++ 插入数据
+insert into t_student(id,name,birth) values(2,&apos;jzh&apos;,&apos;10-20-1996&apos;);
+以上发生错误：
+        第一：&apos;10-20-1996&apos;日期字符串格式和mysql默认格式不同.
+        第二：&apos;10-20-1996&apos;是varchar类型，birth字段需要date类型，类型不匹配.
+
+纠正以上错误：
+        insert int t_student(id,name,birth) values(2,&apos;jzh&apos;,str_to_date(&apos;10-20-1996&apos;,&apos;%m-%d-%Y&apos;));</code></pre></li>
+<li><p>str_to_date函数通常使用在插入操作中，字段是date类型，不接受字符串varchar类型，需要先通过该函数将varchar变成date再插入数据，才能成功.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="日期处理-date-format"><a href="#日期处理-date-format" class="headerlink" title="日期处理_date_format"></a>日期处理_date_format</h3><ol>
+<li><p>该函数的作用是：将日期类型date转换成具有特定格式的日期字符串varchar【date ——————&gt; varchar】</p>
+</li>
+<li><p>该函数的运算结果是：varchar类型【具有特定格式的】</p>
+</li>
+<li><p>该函数的语法格式：date_format(日期类型数据,’日期格式’)</p>
+</li>
+<li><p>回顾java中的日期格式化：<br> SimpleDateFormat sdf = new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);<br> Date nowTime = new Date();<br> String strTime = sdf.format(nowTime);</p>
+</li>
+<li><p>案例：查询员工的入职日期，以’10-20-1996’的格式显示到窗口中.<br> <code>select ename,date_format(hiredate,&#39;%m-%d-%Y&#39;) as hiredate from emp;</code></p>
+</li>
+<li><p>案例：查询员工的入职日期，以’10/20/1996’的格式显示到窗口中.<br> <code>select ename,date_format(hiredate,&#39;%m/%d/%Y&#39;) as hiredate from emp;</code></p>
+</li>
+<li><p>以下两个DQL语句的执行结果相同：<br><code>select ename,date_format(hiredate,&#39;%Y-%m-%d&#39;) as hiredate from emp;</code><br><code>select ename,hiredate from emp;</code>【hiredate自动转换成varchar类型，采用’%Y-%m-%d’格式】<br>打印出来一样的，因为mysql帮我们做了自动类型转换，显示给我们的date类型自动转换成了字符串.</p>
+</li>
+<li><p>结论：date_format函数主要使用在查询操作中，客户需要日期以特定格式展示的时候，需要使用该函数.</p>
+</li>
+</ol>
+
     
   </div>
 
@@ -416,7 +761,7 @@ ga('send', 'pageview');
     <a class="show pull-left" href="/2019/06/26/mysql安装/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="hide pull-right" href="/">
+    <a class="show pull-right" href="/2019/06/29/servlet基础/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
