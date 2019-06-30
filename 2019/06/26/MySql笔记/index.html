@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="泽恒">
 <meta property="og:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-29T09:13:35.634Z">
+<meta property="og:updated_time" content="2019-06-30T05:47:40.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql笔记">
 <meta name="twitter:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
@@ -196,7 +196,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表语法"><span class="toc-text">创建表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的数据字段类型"><span class="toc-text">常用的数据字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据字段的属性"><span class="toc-text">数据字段的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表语法"><span class="toc-text">创建表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的数据字段类型"><span class="toc-text">常用的数据字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据字段的属性"><span class="toc-text">数据字段的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组函数-聚合函数-多行处理函数"><span class="toc-text">分组函数/聚合函数/多行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distinct"><span class="toc-text">distinct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL语句的总结"><span class="toc-text">DQL语句的总结</span></a></li></ol>
   </div>
 
 
@@ -721,6 +721,116 @@ insert into t_student(id,name,birth) values(2,&apos;jzh&apos;,&apos;10-20-1996&a
 <li><p>结论：date_format函数主要使用在查询操作中，客户需要日期以特定格式展示的时候，需要使用该函数.</p>
 </li>
 </ol>
+<h3 id="分组函数-聚合函数-多行处理函数"><a href="#分组函数-聚合函数-多行处理函数" class="headerlink" title="分组函数/聚合函数/多行处理函数"></a>分组函数/聚合函数/多行处理函数</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><font color="red">count</font></td>
+<td>取得记录数</td>
+</tr>
+<tr>
+<td><font color="red">sum</font></td>
+<td>求和</td>
+</tr>
+<tr>
+<td><font color="red">avg</font></td>
+<td>取平均</td>
+</tr>
+<tr>
+<td><font color="red">max</font></td>
+<td>取最大的数</td>
+</tr>
+<tr>
+<td><font color="red">min</font></td>
+<td>取最小的数</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>单行处理函数和多行处理函数的区别<br><code>select lower(ename) from emp;</code>:显示的是ename字段的所有记录的小写形式，lower函数一次只能针对一个记录将它处理返回一个小写显示出来，多少条记录就处理多少次.<br><code>select sum(sal) from emp;</code>:显示的是sal字段的所有记录相加的总和，一共就一行记录，该函数一次将所有人的工资相加求和返回一个总数，用到了sal字段的所有记录.</p>
+</li>
+<li><p>用法示例</p>
+<ul>
+<li><code>select avg(sal) from emp;</code><br>将sal字段所有记录取平均数显示出来</li>
+<li><code>select count(ename) from emp;</code><br>统计ename字段多少的记录.</li>
+<li><code>select max(sal) from emp;</code><br>找出sal最大的那一个</li>
+<li><code>select min(sal) from emp;</code><br>找出sal最小的那一个</li>
+</ul>
+</li>
+<li><p>count(字段名)和count(*)的区别</p>
+<ul>
+<li>count(字段名)表示当前字段记录<strong>不为null</strong>的总数</li>
+<li>select count(*) from emp where ename is null;&nbsp;&nbsp;&nbsp;符合条件的所有记录总数(包含null).</li>
+<li>select count(*) from emp；&nbsp;&nbsp;&nbsp;emp表有多少行记录就显示多少.</li>
+</ul>
+</li>
+<li><p><strong>分组函数不能使用在where关键字后面(不解释记住)</strong></p>
+</li>
+<li><p><font color="red"><b>注意：分组函数自动忽略空值，不需要手动的加where条件排除空值.<br>select count(*) from emp where xxx;&nbsp;&nbsp;&nbsp;符合条件的所有记录总数.</b></font></p>
+</li>
+</ul>
+<h3 id="distinct"><a href="#distinct" class="headerlink" title="distinct"></a>distinct</h3><ul>
+<li><p><code>select distinct job from emp；</code></p>
+<ul>
+<li>去除job字段重复记录</li>
+<li>只是将查询结果去重显示，表中记录不会被更改</li>
+</ul>
+</li>
+<li><p><code>select ename,distinct job from emp;</code></p>
+<ul>
+<li>该语句不可行，会报错</li>
+<li>distinct只能出现在所有字段的最前方，他的前方不能有任何字段</li>
+<li>distinct后面的字段不论有几个，都视为一组，比如：<ul>
+<li><code>select distinct job,ename from emp;</code>中job和ename视为一组，意思是这两个人的job和ename必须都是一样才算重复，只有一个一样另一个不一样不算重复.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><ul>
+<li><p>分组查询主要涉及到两个子句，分别是：group by和having</p>
+</li>
+<li><p>group by</p>
+<ul>
+<li><p>含义</p>
+<pre><code>order by：表示通过哪个或者哪些字段进行排序.
+group by：表示通过哪个或者哪些字段进行分组.</code></pre></li>
+<li><p>案例：找出每个工作岗位的最高薪水【先按照工作岗位分组，使用max函数求每一组的最高薪水】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">	max(sal)</span><br><span class="line">from </span><br><span class="line">	emp</span><br><span class="line">group by</span><br><span class="line">	job;</span><br><span class="line">以上的SQL语句表示，先按照job分组，然后对每一组使用max(sal)求最高薪水.</span><br><span class="line"></span><br><span class="line">select</span><br><span class="line">	job,max(sal)</span><br><span class="line">from </span><br><span class="line">	emp</span><br><span class="line">group by</span><br><span class="line">	job;</span><br><span class="line">job写在select后面，在这里可以的，job被分组了，每个job的最高薪水都能对应上，写别的字段就不行了，虽然不会报错，但是对不上.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>重点：若一条DQL语句当中有group by子句，那么select关键字后面只能跟参与分组的字段和分组函数.</strong></li>
+<li>案例：计算每个部门的平均薪水【按照部门编号分组，对每一组求平均薪水】<br><code>select deptno,avg(sal) as avgsal from emp group by deptno;</code></li>
+<li>案例：计算不同工作岗位的最高薪水<br><code>select job,max(sal) from emp group by job;</code></li>
+<li>案例：计算不同部门中不同工作岗位的最高薪水<br><code>select deptno,job,max(sal) group by deptno,job;</code><br>这里和distinct差不多，后面的deptno,job两个字段表示一组，联合起来进行分组，比如工作岗位一样，但是部门不同，则不算是一组.</li>
+<li>找出每个工作岗位的最高薪水，除MANAGER岗位之外.<br><code>select job,max(sal) from emp where job&lt;&gt; &#39;MANAGER&#39; group by job;</code></li>
+<li>找出每个工作岗位的平均薪水，要求显示平均薪水大于1500.<br><code>select job,avg(sal) from emp where avg(sal)&gt;1500 group by job;</code><br><font color="red"><b>注意，之前说过where后面不能跟分组函数，所以这是错误的，之前没有解释为啥不能跟分组函数，这里就可以明白了，这里sql语句的顺序是from emp————&gt;where avg(sal)&gt;1500———&gt;group by job,因为分组函数首先得先分组，还没有group by呢，所以不能在where后面用分组函数.这里我们就要用到having了.</b></font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>having</p>
+<ul>
+<li><p>having和where都是为了完成数据过滤的.</p>
+</li>
+<li><p>where和having后面都是添加条件.</p>
+</li>
+<li><p>where在group by之前完成过滤.(执行顺序先where在group by)</p>
+</li>
+<li><p>having在group by之后完成过滤.(执行顺序先group by再having)</p>
+</li>
+<li><p><strong>原则：能用where尽量不用having,效率高低不同，where无法过滤的数据通常都是先分组之后再过滤的，这个时候可以选择having.</strong></p>
+</li>
+<li><p>刚刚那个案例找出每个工作岗位的平均薪水，要求显示平均薪水大于1500.<br><code>select job,avg(sal) from emp group by job having avg(sal)&gt;1500;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DQL语句的总结"><a href="#DQL语句的总结" class="headerlink" title="DQL语句的总结"></a>DQL语句的总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">		...</span><br><span class="line">from</span><br><span class="line">		...</span><br><span class="line">where</span><br><span class="line">		...</span><br><span class="line">group by</span><br><span class="line">		...</span><br><span class="line">having</span><br><span class="line">		...</span><br><span class="line">order by</span><br><span class="line">		...</span><br><span class="line"></span><br><span class="line">第一：以上的关键字顺序不能变，严格遵守</span><br><span class="line">第二：执行顺序：</span><br><span class="line">		1. from 		从某张表中检索数据</span><br><span class="line">		2. where 		经过某条件进行过滤</span><br><span class="line">		3. group by 	然后分组</span><br><span class="line">		4. having 		分组之后不满意再过滤</span><br><span class="line">		5. select 		查询出来</span><br><span class="line">		6. order by 	排序输出</span><br><span class="line">第三：这里我们只用到了单表查询，后面开始多表查询(表的连接查询).</span><br></pre></td></tr></table></figure>
+
 
     
   </div>
