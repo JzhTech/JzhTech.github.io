@@ -15,15 +15,21 @@
     <meta name="keywords" content="servlet,">
   
 
-  <meta name="keywords" content="servlet">
+  <meta name="description" content="快速入门 类实现Servlet接口，实现重写service方法 webContent下WEB-INF中的web.xml配置servlet和servlet-mapping  servlet的API和生命周期 Servlet接口中的方法 ①init(ServletConfig config)何时执行：servlet对象创建的时候执行（方法不是静态的所以必须要对象调用，所以tomcat帮我们创建该ser">
+<meta name="keywords" content="servlet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="servlet基础">
 <meta property="og:url" content="https://JzhTech.github.io/2019/06/29/servlet基础/index.html">
 <meta property="og:site_name" content="泽恒">
+<meta property="og:description" content="快速入门 类实现Servlet接口，实现重写service方法 webContent下WEB-INF中的web.xml配置servlet和servlet-mapping  servlet的API和生命周期 Servlet接口中的方法 ①init(ServletConfig config)何时执行：servlet对象创建的时候执行（方法不是静态的所以必须要对象调用，所以tomcat帮我们创建该ser">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-29T01:36:59.731Z">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/29/servlet基础/servlet%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/29/servlet基础/servlet%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.png">
+<meta property="og:updated_time" content="2019-07-01T02:55:15.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="servlet基础">
+<meta name="twitter:description" content="快速入门 类实现Servlet接口，实现重写service方法 webContent下WEB-INF中的web.xml配置servlet和servlet-mapping  servlet的API和生命周期 Servlet接口中的方法 ①init(ServletConfig config)何时执行：servlet对象创建的时候执行（方法不是静态的所以必须要对象调用，所以tomcat帮我们创建该ser">
+<meta name="twitter:image" content="https://jzhtech.github.io/2019/06/29/servlet基础/servlet%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
 
   
 
@@ -191,6 +197,11 @@ ga('send', 'pageview');
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速入门"><span class="toc-text">快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet的API和生命周期"><span class="toc-text">servlet的API和生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet的执行过程"><span class="toc-text">servlet的执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet的配置"><span class="toc-text">servlet的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpServlet"><span class="toc-text">HttpServlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ServletContext对象"><span class="toc-text">ServletContext对象</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
@@ -234,7 +245,84 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      
+      <h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li>类实现Servlet接口，实现重写service方法</li>
+<li>webContent下WEB-INF中的web.xml配置servlet和servlet-mapping</li>
+</ol>
+<h3 id="servlet的API和生命周期"><a href="#servlet的API和生命周期" class="headerlink" title="servlet的API和生命周期"></a>servlet的API和生命周期</h3><ol>
+<li>Servlet接口中的方法<br> ①init(ServletConfig config)<pre><code>何时执行：servlet对象创建的时候执行（方法不是静态的所以必须要对象调用，所以tomcat帮我们创建该servlet对象时执行，且只执行一次）
+ServletConfig ： 代表的是该servlet对象的配置信息
+    1）获得servlet的name----------&lt;servlet-name&gt;abc&lt;/servlet-name&gt;-------config.getServletName();
+    2）获得该servlet的初始化的参数--------&lt;initparameter&gt;...&lt;/initparameter&gt;-------config.getInitParameter(&quot;url&quot;)
+    3）获得ServletContext对象---------------config.getServletContext();</code></pre> ②service(ServletRequest request,ServletResponse response)<pre><code>何时执行：每次请求都执行
+ServletRequest:代表请求 认为ServletRequest内部封装的是http请求的信息。
+ServletResponse:代表响应 认为要封装的是响应的信息</code></pre> ③destroy()<pre><code>何时执行：servlet销毁的时候执行</code></pre></li>
+<li>Servlet的生命周期<br> ①Servlet何时创建<pre><code>默认第一次访问servlet时创建该对象（可以通过配置指定他什么时候创建，所以默认）</code></pre> ②Servlet何时销毁<pre><code>服务器关闭servlet就销毁了</code></pre> ③每次访问必然执行的方法<pre><code>service(ServeletRequest req,ServletResponse res)方法</code></pre></li>
+</ol>
+<h3 id="servlet的执行过程"><a href="#servlet的执行过程" class="headerlink" title="servlet的执行过程"></a>servlet的执行过程</h3><p><img src="/2019/06/29/servlet基础/servlet%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png" alt="servlet执行过程"></p>
+<h3 id="servlet的配置"><a href="#servlet的配置" class="headerlink" title="servlet的配置"></a>servlet的配置</h3><ol>
+<li><img src="/2019/06/29/servlet基础/servlet%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.png" alt="servlet基本配置"></li>
+</ol>
+<p>其中url-pattern的配置方式：<br>    1）完全匹配 访问的资源与配置的资源完全相同才能访问到<br>        <code>&lt;url-pattern&gt;/quickStratServlet&lt;/url-pattern&gt;</code><br>    2）目录匹配 格式：/虚拟的目录../*  *代表任意<br>        <code>&lt;url-pattern&gt;/aaa/bbb/ccc/*&lt;/url-pattern&gt;</code><br>    3）扩展名匹配 格式：*.扩展名<br>        <code>&lt;url-pattern&gt;*.abcd&lt;/url-pattern&gt;</code></p>
+<pre><code>注意：第二种与第三种不要混用/aaa/bbb/ccc/*.abcd （错误的）</code></pre><ol start="2">
+<li><p>服务器启动实例化Servlet配置<br>Servlet的何时创建：默认第一次访问时创建<br> 为什么是默认？<br> 当在servlet的配置时，加上一个配置<code>&lt;load-on-startup&gt;3&lt;/load-on-startup&gt;</code>servlet对象在服务器启动时就创建（数字代表优先级，越小优先级越高）</p>
+</li>
+<li><p>缺省Servlet<br>可以将url-pattern配置成一个/，代表该servlet是缺省的servlet<br> 什么是缺省的servlet？</p>
+<pre><code>当你访问的资源地址所有的servlet都不匹配时，缺省的servlet负责处理
+
+其实，web应用中所有的资源的响应都是servlet负责，包括静态资源。
+
+    注意：当访问一个静态资源或者url，如果web应用自带的web.xml没有配置该url或者静态资源，则找缺省的那个配置，如果没有配置缺省的则找tomcat的全局配置文件web.xml中对应的url或缺省的。</code></pre></li>
+<li><p>欢迎页面<br>输入<a href="http://localhost:8080/WEB12（后面不写任何东西默认访问欢迎页面）" target="_blank" rel="noopener">http://localhost:8080/WEB12（后面不写任何东西默认访问欢迎页面）</a></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;welcome-file-list&gt;</span><br><span class="line">	&lt;welcome-file&gt;1.html&lt;/welcome-file&gt;</span><br><span class="line">	&lt;welcome-file&gt;1.jsp&lt;/welcome-file&gt;</span><br><span class="line">&lt;/welcome-file-list&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 如果我们不配，tomcat会帮配。</p>
+</li>
+</ol>
+<h3 id="HttpServlet"><a href="#HttpServlet" class="headerlink" title="HttpServlet"></a>HttpServlet</h3><ul>
+<li>不再实现Servlet,而是继承HttpServlet，重写doPost（HttpServletRequest req,HttpServletResponse res）和doGet（HttpServletRequest req,HttpServletResponse res）</li>
+<li>tomcat进入该类找service方法，找不到去父类找到service(ServletRequest req,ServletResponse res),该方法中强转req和res为HttpServletRequest和HttpServletResponse类型，然后调用另一个service<br>  方法，传入这两个强转后的参数，通过req.getMethod（）获得请求方式，比对调用doPost还是doGet。</li>
+</ul>
+<h3 id="ServletContext对象"><a href="#ServletContext对象" class="headerlink" title="ServletContext对象"></a>ServletContext对象</h3><ol>
+<li>什么是ServletContext对象</li>
+</ol>
+<ul>
+<li>ServletContext代表是一个web应用的环境（上下文）对象，ServletContext对象内部封装是该web应用的信息，ServletContext对象一个web应用只有一个。</li>
+<li>问题：一个web应用有几个servlet对象？———–多个</li>
+<li>ServletContext对象的生命周期？<br>创建：该web应用被加载（服务器启动（前提是已经存在在服务器内部）或发布web应用（前提是服务器是启动状态））<pre><code>销毁：web应用被卸载（服务器关闭（前提是已经存在在服务器内部）或移除该应用（前提是服务器是启动状态））</code></pre></li>
+</ul>
+<ol start="2">
+<li>怎样获得ServletContext对象</li>
+</ol>
+<ul>
+<li>ServletContext servletContext = config.getServletContext();</li>
+<li>ServletContext context = this.getServletContext();或者ServletContext context = getServletContext();</li>
+</ul>
+<ol start="3">
+<li>ServletContext的作用</li>
+</ol>
+<ul>
+<li><p>获得web应用全局的初始化参数<br>web.xml中配置初始化参数 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;&lt;/servlet&gt;外部配置全局的初始化参数</span><br><span class="line">&lt;context-param&gt;&lt;param-name&gt;..&lt;param-name&gt;&lt;/context-param&gt;</span><br><span class="line">		ServletContext context = getServletContext();</span><br><span class="line">		String initParamter = context.getInitParameter(&quot;..&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获得web应用中任何资源的绝对路径（重要！！！）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">方法：String path = context.getRealPath(相对于该web应用的相对地址);</span><br><span class="line">		</span><br><span class="line">		在读取src（classes）下的资源时可以通过类加载器的-----专门加载classes下的文件的</span><br><span class="line">		getResource()参数是一个相对地址，相对classes（根目录）</span><br><span class="line">		String path = ContextServlet.class.getClassLoader().getResource(&quot;...&quot;).getPath();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ServletContext是一个域对象（重要！！！）<br>什么是域对象？什么是域？</p>
+<pre><code>存储数据的区域就是域对象
+
+ServletContext域对象的作用范围：整个web应用（所有的web资源都可以随意向servletcontext域中存取数据，数据可以共享）
+
+在ServletContext1类中存数据：context.setAttribute(&quot;name&quot;,&quot;zhangsan&quot;);
+在ServletContext2类中取数据：String attribute = (String)this.getServletContext().getAttribute(&quot;name&quot;);</code></pre></li>
+<li><p>域对象的通用方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setAttribute(String name,Object obj);</span><br><span class="line">getAttribute(String name);</span><br><span class="line">removeAttribute(String name);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="4">
+<li>serlvet模板</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package $&#123;enclosing_package&#125;;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.http.HttpServlet;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line">public class $&#123;primary_type_name&#125; extends HttpServlet &#123;</span><br><span class="line"></span><br><span class="line">	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">		response.getWriter().write(&quot;hello haohao...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">		doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
   </div>
 
