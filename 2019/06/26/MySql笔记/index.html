@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="泽恒">
 <meta property="og:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-01T02:32:20.133Z">
+<meta property="og:updated_time" content="2019-07-01T04:21:43.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql笔记">
 <meta name="twitter:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
@@ -196,7 +196,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表语法"><span class="toc-text">创建表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的数据字段类型"><span class="toc-text">常用的数据字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据字段的属性"><span class="toc-text">数据字段的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组函数-聚合函数-多行处理函数"><span class="toc-text">分组函数/聚合函数/多行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distinct"><span class="toc-text">distinct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL语句的总结"><span class="toc-text">DQL语句的总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接查询"><span class="toc-text">连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#内连接"><span class="toc-text">内连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外连接【只掌握SQL99语法】"><span class="toc-text">外连接【只掌握SQL99语法】</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表语法"><span class="toc-text">创建表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的数据字段类型"><span class="toc-text">常用的数据字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据字段的属性"><span class="toc-text">数据字段的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组函数-聚合函数-多行处理函数"><span class="toc-text">分组函数/聚合函数/多行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distinct"><span class="toc-text">distinct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL语句的总结"><span class="toc-text">DQL语句的总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接查询"><span class="toc-text">连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#内连接"><span class="toc-text">内连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外连接【只掌握SQL99语法】"><span class="toc-text">外连接【只掌握SQL99语法】</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子查询"><span class="toc-text">子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#union"><span class="toc-text">union</span></a></li></ol>
   </div>
 
 
@@ -1492,6 +1492,91 @@ group by：表示通过哪个或者哪些字段进行分组.</code></pre></li>
 <p>emp a<br>dept d<br>salgrade s</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">		e.ename,d.dname,s.grade</span><br><span class="line">from</span><br><span class="line">		emp e</span><br><span class="line">join</span><br><span class="line">		dept d</span><br><span class="line">on</span><br><span class="line">		e.deptno = d.deptno</span><br><span class="line">join</span><br><span class="line">		salgrade s</span><br><span class="line">on</span><br><span class="line">		e.sal between s.losal and s.hisal;</span><br></pre></td></tr></table></figure>
 
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><ol>
+<li><p>什么是子查询？</p>
+<p> 子查询就是嵌套的 select 语句，可以理解为子查询是一张表</p>
+</li>
+<li><p>子查询可以出现在哪儿？</p>
+<p> select..(select).<br> from..(select).<br> where..(select).</p>
+</li>
+<li><p><strong>where后面使用select子查询</strong></p>
+</li>
+</ol>
+<p>案例：找出薪水比公司平均薪水高的员工，要求显示员工名和薪水.</p>
+<p><code>select ename,sal from emp where sal &gt; avg(sal);</code><br>以上语句执行报错，分组函数不能直接使用在where后面</p>
+<p>第一步：找出公司的平均薪水<br><code>select avg(sal) from emp;</code></p>
+<table>
+<thead>
+<tr>
+<th>avg(sal)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2073.214286</td>
+</tr>
+</tbody></table>
+<p>第二步：找出薪水大于平均薪水的员工信息<br><code>select ename,sal from emp where sal &gt; (select avg(sal) from emp);</code></p>
+<table>
+<thead>
+<tr>
+<th>ename</th>
+<th>sal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JONES</td>
+<td>2975.00</td>
+</tr>
+<tr>
+<td>BLAKE</td>
+<td>2850.00</td>
+</tr>
+<tr>
+<td>CLARK</td>
+<td>2450.00</td>
+</tr>
+</tbody></table>
+<ol start="4">
+<li><strong>from后面使用子查询【小窍门：将查询结果当做临时表】</strong></li>
+</ol>
+<p>案例：找出每一个部门的平均薪水，并且要求显示平均薪水的薪水等级.</p>
+<p>第一步：找出每个部门的平均薪水<br><code>select deptno,avg(sal) as avgsal from emp group by deptno;</code></p>
+<table>
+<thead>
+<tr>
+<th>deptno</th>
+<th>avgsak</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10</td>
+<td>2916.666667</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2175.000000</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1566.666667</td>
+</tr>
+</tbody></table>
+<p>第二步:将上面的查询结果当做临时表t，t表和salgrade s表进行连接，条件：<code>t.avgsal between s.losal and s.hisal</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">		t.deptno,t.avgsal,s.grade</span><br><span class="line">from</span><br><span class="line">		(select deptno,avg(sal) as avgsal from emp group by deptno) t</span><br><span class="line">join</span><br><span class="line">		salgrade s</span><br><span class="line">on</span><br><span class="line">		t.avgsal between s.losal and s.hisal;</span><br></pre></td></tr></table></figure>
+
+<p>这里将t表的所有字段都取出来了，可以简写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">		t.*,s.grade</span><br><span class="line">from</span><br><span class="line">		(select deptno,avg(sal) as avgsal from emp group by deptno) t</span><br><span class="line">join</span><br><span class="line">		salgrade s</span><br><span class="line">on</span><br><span class="line">		t.avgsal between s.losal and s.hisal;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><strong>在select后面使用子查询【了解】</strong></li>
+</ol>
+<p><code>select e.ename,(select d.dname from dept d where e.deptno=d.deptno) as dname from emp e;</code><br>这里匹配的是每个员工对应的部门名称.</p>
+<h3 id="union"><a href="#union" class="headerlink" title="union"></a>union</h3><p>union可以合并查询结果集，就是将两条语句查询出来的结果显示相加到一起.</p>
+<p>比如：查询job为java和mysql，显示ename和job</p>
+<p>一种是：<code>select ename,job from emp where job = &#39;java&#39; or job = &#39;mysql&#39;;</code></p>
+<p>还有一种:<code>select ename,job from emp where job in (&#39;java&#39;,&#39;mysql&#39;);</code></p>
+<p>我们也可以单个单个的查：<br>    先<code>select ename,job from emp where job = &#39;java&#39;;</code><br>    再<code>select ename,job from emp where job = &#39;mysql&#39;;</code><br>但是这样的话，显示出来是一个一个的，所以可以通过union将这两条语句合并：<code>select ename,job from emp where job = &#39;java&#39; union select ename,job from emp where job = &#39;mysql&#39;;</code>然后查询，结果和前两种是一样的.</p>
+<p><strong>注意：用union的话，前后两条select语句，他们的字段个数要相同</strong></p>
 
     
   </div>
