@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%8F%92%E5%85%A5%E6%88%90%E5%8A%9F.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A41.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%89%8B%E5%8A%A8%E6%8F%90%E4%BA%A41.png">
-<meta property="og:updated_time" content="2019-07-03T11:35:32.970Z">
+<meta property="og:updated_time" content="2019-07-03T11:45:22.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql笔记">
 <meta name="twitter:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
@@ -2270,12 +2270,13 @@ MYSQL数据库管理系统默认的隔离级别就是：可重复读
 </li>
 <li><p>第一范式</p>
 <ul>
-<li>要求有主键，并且要求每一个字段原子性不可再分</li>
+<li>要求<strong>有主键</strong>，并且要求每一个字段原子性<strong>不可再分</strong>，比如字段：联系方式，他的值是<code>29481785@qq.com，138457991145</code>,这个可以单独分为email字段和phone字段，所以不是不可再分，不满足第一范式。</li>
 </ul>
 </li>
 <li><p>第二范式</p>
 <ul>
-<li>要求素有非主键字段完全依赖主键，不能产生部分依赖</li>
+<li>前提先满足第一范式</li>
+<li>要求素有非主键字段完全依赖主键，<strong>不能产生部分依赖</strong>，主要体现在联合主键上面，比如联合主键id和name，如果另外一个字段只对id产生依赖，而和name没关系，则不行。</li>
 </ul>
 </li>
 <li><p>第三范式</p>
