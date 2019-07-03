@@ -23,10 +23,17 @@
 <meta property="og:site_name" content="泽恒">
 <meta property="og:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-01T08:13:19.768Z">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%9F%A5%E7%9C%8B%E8%A1%A8%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%8F%92%E5%85%A5%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E5%86%8D%E5%BC%80%E4%B8%80%E4%B8%AA%E4%BC%9A%E8%AF%9D.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%8F%92%E5%85%A5%E6%88%90%E5%8A%9F.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A41.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%89%8B%E5%8A%A8%E6%8F%90%E4%BA%A41.png">
+<meta property="og:updated_time" content="2019-07-03T11:35:32.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql笔记">
 <meta name="twitter:description" content="SQL概述 SQL全称是Structured Query Language（关系查询语句），SQL用来完成和数据库的通信，SQL是一套标准。 每个数据库都有自己的特性别的数据库没有，当使用这个数据库特性相关的功能，这时SQL语句可能就不是标准了.（90%以上的SQL都是通用的）  什么是数据库 数据库 通常是一个或一组文件，保存了一些符合特定规格的数据 数据库对应的单词是DataBase，简称：D">
+<meta name="twitter:image" content="https://jzhtech.github.io/2019/06/26/MySql笔记/%E6%9F%A5%E7%9C%8B%E8%A1%A8%E6%95%B0%E6%8D%AE.png">
 
   
 
@@ -196,7 +203,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表语法"><span class="toc-text">创建表语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的数据字段类型"><span class="toc-text">常用的数据字段类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据字段的属性"><span class="toc-text">数据字段的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组函数-聚合函数-多行处理函数"><span class="toc-text">分组函数/聚合函数/多行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distinct"><span class="toc-text">distinct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL语句的总结"><span class="toc-text">DQL语句的总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接查询"><span class="toc-text">连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#内连接"><span class="toc-text">内连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外连接【只掌握SQL99语法】"><span class="toc-text">外连接【只掌握SQL99语法】</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子查询"><span class="toc-text">子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#union"><span class="toc-text">union</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limit"><span class="toc-text">limit</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL概述"><span class="toc-text">SQL概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数据库"><span class="toc-text">什么是数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql概述"><span class="toc-text">MySql概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令开启MySql服务"><span class="toc-text">命令开启MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令停止MySql服务"><span class="toc-text">命令停止MySql服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL的分类"><span class="toc-text">SQL的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入演示数据"><span class="toc-text">导入演示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令中出现短路问题-出现—-gt"><span class="toc-text">命令中出现短路问题(出现—&gt;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表描述"><span class="toc-text">表描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单查询"><span class="toc-text">简单查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据处理函数-单行处理函数"><span class="toc-text">数据处理函数/单行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-str-to-date"><span class="toc-text">日期处理_str_to_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期处理-date-format"><span class="toc-text">日期处理_date_format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组函数-聚合函数-多行处理函数"><span class="toc-text">分组函数/聚合函数/多行处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distinct"><span class="toc-text">distinct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DQL语句的总结"><span class="toc-text">DQL语句的总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接查询"><span class="toc-text">连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#内连接"><span class="toc-text">内连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外连接【只掌握SQL99语法】"><span class="toc-text">外连接【只掌握SQL99语法】</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子查询"><span class="toc-text">子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#union"><span class="toc-text">union</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limit"><span class="toc-text">limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#约束"><span class="toc-text">约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#级联更新和删除"><span class="toc-text">级联更新和删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储引擎"><span class="toc-text">存储引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务"><span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事务的提交与回滚演示"><span class="toc-text">事务的提交与回滚演示</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事务的四个特性之一：隔离性-isolation"><span class="toc-text">事务的四个特性之一：隔离性(isolation)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设置事务的隔离级别"><span class="toc-text">设置事务的隔离级别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看隔离级别"><span class="toc-text">查看隔离级别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#并发事务与隔离级别示例"><span class="toc-text">并发事务与隔离级别示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引【了解】"><span class="toc-text">索引【了解】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视图"><span class="toc-text">视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DBA命令"><span class="toc-text">DBA命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库设计三范式"><span class="toc-text">数据库设计三范式</span></a></li></ol>
   </div>
 
 
@@ -380,45 +387,6 @@ ga('send', 'pageview');
 <li><p>查看表结构</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<h3 id="创建表语法"><a href="#创建表语法" class="headerlink" title="创建表语法"></a>创建表语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">create table `表名`(</span><br><span class="line">	`字段名1` 列类型[属性] [索引] [注释],</span><br><span class="line">	`字段名2` 列类型[属性] [索引] [注释],</span><br><span class="line">	... ...</span><br><span class="line">	`字段名n` 列类型[属性] [索引] [注释]</span><br><span class="line">)[表类型][表字符集][注释];</span><br><span class="line"></span><br><span class="line">``：反引号，可写可不写，与单引号不同</span><br><span class="line"></span><br><span class="line">带有[]的也是可选的</span><br><span class="line"></span><br><span class="line">一般创建表也没有这么详细，简写就行</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">	CREATE TABLE `students` (</span><br><span class="line">  		`sid` char(10) PRIMARY KEY,</span><br><span class="line">  		`sname` varchar(50) NOT NULL,</span><br><span class="line">  		`sex` char(1) NOT NULL,</span><br><span class="line">  		`dob` date NOT NULL,</span><br><span class="line">  		`phone` varchar(30)</span><br><span class="line">  	);</span><br></pre></td></tr></table></figure>
-
-<h3 id="常用的数据字段类型"><a href="#常用的数据字段类型" class="headerlink" title="常用的数据字段类型"></a>常用的数据字段类型</h3><ul>
-<li>数值类型<ul>
-<li>int:整数</li>
-<li>double:双精度浮点数</li>
-</ul>
-</li>
-<li>字符串类型<ul>
-<li>char:固定字符串，规定多大字节就是多大，用了多少剩余的浪费了</li>
-<li>varchar:可变字符串，只给实际占用的空间，用了多少分配多少剩余的不分配了</li>
-</ul>
-</li>
-<li>日期和时间类型:datetime,给值时格式为YY-MM-DD hh:mm:ss</li>
-<li>null:数据库中null不是一个值，代表什么都没有</li>
-</ul>
-<h3 id="数据字段的属性"><a href="#数据字段的属性" class="headerlink" title="数据字段的属性"></a>数据字段的属性</h3><ul>
-<li>unsigned<ul>
-<li>不允许为负数</li>
-</ul>
-</li>
-<li>zerofill<ul>
-<li>不足位数的用0填充，如int(3)，5则为005</li>
-</ul>
-</li>
-<li>auto_increment<ul>
-<li>自动增长的，通常设置主键为整数类型，自动增长</li>
-</ul>
-</li>
-<li>null和not null<ul>
-<li>如果为null，则不能插入该字段值，什么都没有</li>
-<li>如果为not null，则必须有值</li>
-</ul>
-</li>
-<li>default<ul>
-<li>默认的，可设置默认值，如果不赋值则直接为默认值</li>
-</ul>
 </li>
 </ul>
 <h3 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h3><p><font color="red"><b><em>mysql中sql语句不分大小写，语句以分号结尾，引号只用单引号，但是mysql数据库中支持双引号</em></b></font></p>
@@ -1590,6 +1558,737 @@ group by：表示通过哪个或者哪些字段进行分组.</code></pre></li>
 <li><p>案例：找出公司中工资排名在前5名的员工【limit出现在SQL语句的最后位置上】<br>思路：按照工资降序排列取前5个<br><code>select ename,sal from emp order by sal desc limit 5;</code></p>
 </li>
 <li><p>案例：找出工资排名在【3-9】名的员工<br><code>select ename,sal from emp order by sal desc limit 2，7;</code></p>
+</li>
+<li><p>MYSQL中通用的分页SQL语句：<br>每页显示3条记录<br>第1页：0,3<br>第2页：3,3<br>第3页：6,3<br>第4页：9,3<br>……<br>每页显示pageSize条记录<br>第pageNo页：(pageSize-1)*pageSize,pageSize</p>
+</li>
+</ol>
+<p>通用的分页SQL【只适合于MYSQL数据库管理系统】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">	t.*</span><br><span class="line">from</span><br><span class="line">	t</span><br><span class="line">order by</span><br><span class="line">	t.xxx desc/asc</span><br><span class="line">limit</span><br><span class="line">	(pageNo-1)*pageSize,pageSize;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><ul>
+<li><p>表格(table)，用来存储数据，表格是一种结构化文件。</p>
+</li>
+<li><p>表格行被称为记录(表中的数据)，表格列被称为字段。</p>
+</li>
+<li><p>表格的字段属性包括：字段名称、字段数据类型、字段长度、字段约束</p>
+</li>
+<li><p>不带约束的简单建表语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">create table tableName(</span><br><span class="line">	columnName dataType(length),</span><br><span class="line">	... ...</span><br><span class="line">	columnName dataType(length),</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">	CREATE TABLE students (</span><br><span class="line">  		sid char(10),</span><br><span class="line">  		sname varchar(50),</span><br><span class="line">  		sex char(1),</span><br><span class="line">  		dob date,</span><br><span class="line">  		phone varchar(30)</span><br><span class="line">  	);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关于MYSQL数据库中的数据类型</p>
+<ul>
+<li>varchar<pre><code>可变长度字符串
+varchar(3) 表示存储的数据不能超过3个字符长度</code></pre></li>
+<li>char<pre><code>定长字符串
+varchar和char对比：
+        都是字符串
+        varchar比较智能，可以根据实际的数据长度分配空间，比较节省空间，但是在分配的时候需要执行相关的判断程序，效率较低
+        char不需要动态分配空间，所以执行效率很高，但是可能会导致空间浪费。
+        若字段中的数据不具备伸缩性，建议采用char类型存储。
+        若字段中的数据具备很强伸缩性，建议采用varchar类型存储。
+char(3) 表示存储的数据不能超过3个字符长度</code></pre></li>
+<li>int<pre><code>整数型
+int(3) 表示最大可以存储999</code></pre></li>
+<li>bigint<pre><code>长整型
+对应的java程序中的long类型</code></pre></li>
+<li>float<pre><code>浮点型单精度</code></pre></li>
+<li>double<pre><code>浮点型双精度
+double(7,2) 7表示7个有效数字，2个小数位</code></pre></li>
+<li>date<pre><code>日期类型
+在实际开发中为了通用，所以日期类型一般不用，采用字符串代替日期比较多</code></pre></li>
+<li>blob<pre><code>Binary Large OBject  二进制大对象
+专门存储图片声音视频等数据
+数据库表中存储一个图片是很常见的，但是存储一个比较大的视频是很少的，一般都是提供一个视频的链接地址</code></pre></li>
+<li>clob<pre><code>Character Large OBject  字符大对象
+可以存储比较大的文本，4G+的字符串可以存储</code></pre></li>
+<li>其他…</li>
+</ul>
+</li>
+<li><p>创建表格【学生表】</p>
+<pre><code>设计：建立学生信息表，字段包括：
+    学号【int】
+    姓名【varchar】
+    性别【char】
+    出生日期【date】
+    邮箱地址【varchar】
+建表语句：
+create table t_student(
+    no int(10),
+    name varchar(32),
+    sex char(1),
+    birth date,
+    email varchar(128)
+);
+注意：
+    表格的名字最好以t_ 或者tbl_开始，增强可读性
+    varchar长度最好是2的倍数，方便存储中文
+
++ 删除表格：
+    drop table t_student;【这种删除方式，若数据库中没有这样的表格，报错】
+    drop table if exists t_student;【最好采用这种方式，这是MYSQL的特色，其他数据库没有】</code></pre></li>
+<li><p>向t_student表格中插入数据</p>
+<ul>
+<li>向表格插入数据必须使用insert语句，这属于DML语句</li>
+<li>DML语句包括：insert,update,delete【增删改表中的数据，和表结构无关】</li>
+<li>insert语句的语法格式：<pre><code>insert into tablename(columnname1,columnname2,columnname3...) values(value1,value2,value3...);
+字段和值必须一一对应，个数必须相同，数据类型必须一致</code></pre></li>
+<li>向t_student表格中插入数据<pre><code>insert into tablename(no,name,sex,birth,email) values(1,&apos;jhh&apos;,&apos;m&apos;,&apos;1996-10-20&apos;,&apos;jhh.com&apos;);
+insert into tablename(no,name,sex,birth,email) values(2,&apos;jhh1&apos;,&apos;m&apos;,&apos;1996-10-20&apos;,&apos;jhh1.com&apos;);</code></pre></li>
+<li>插入值时可不写任何字段，但是这样等于所有字段都加上，后面的values中的值要对应上所有字段，少了的话报错。</li>
+</ul>
+</li>
+<li><p>插入中文试试？【在dos窗口中】<br> insert into t_student(no,name) values(6,’王五’);<br> 插入失败，原因是dos窗口是GBK的编码方式，但是数据库表只能接受utf8<br> 怎么解决？</p>
+<pre><code>使用navicat工具插入数据
+使用navicat工具插入数据成功，在dos窗口中使用select语句查询的时候出现乱码，
+怎么解决？
+      修改查询结果集的显示编码方式，这里修改的不是dos窗口：
+      set character_set_results = &apos;GBK&apos;;【只对当前会话有效果，就是指关掉dos窗口再重新开一个dos窗口进入查看就没有效果了】
+查看MYSQL的相关字符编码方式：show variables like &apos;%char%&apos;;</code></pre></li>
+<li><p>关于创建表格的时候给字段添加默认值<br>drop table if exists t_student;<br>create table t_student(<br> no int(10),<br> name varchar(32),<br> sex char(1) default ‘m’<br>);<br>insert into t_student(no,name) values(1,’jack’);<br>insert into t_student(no,name) values(2,’lucy’);<br>select * from t_student;</p>
+</li>
+</ul>
+<ul>
+<li><p>获取系统当前时间<br>使用now()函数可以获取系统当前时间<br>select now()<br>创建表：<br>create table t_organizeation(<br> code char(10),<br> name varchar(32),<br> createTime date<br>);<br>insert into t_organizeation(code,name,createTime) values(‘111111’,’江苏外汇局’,now());<br>insert into t_organizeation(code,name,createTime) values(‘111112’,’河南外汇局’,now());<br>insert into t_organizeation(code,name,createTime) values(‘111113’,’安徽外汇局’,now());<br>insert into t_organizeation(code,name,createTime) values(‘111114’,’北京外汇局’,now());</p>
+</li>
+<li><p>表的复制【快速创建表，并插入数据】<br>create table emp1 as select * from emp;【创建的表和emp表一样】<br>create table emp2 as select empno,ename from emp;【创建的表只有emp表的empno和ename字段的记录】<br>语法结构：</p>
+<pre><code>create table tablename as select columnname,... from tablename;</code></pre></li>
+<li><p>将查询结果插入到某张表中<br>insert into emp2 select * from emp2;(插入了查询出来的记录，前期两个表字段对应的，否则插入不进去)<br>语法结构：</p>
+<pre><code>insert into tablename select columnname,... from tablename;</code></pre></li>
+<li><p>增/删/改 表结构【create，drop，alter属于DDL语句】<br>drop table if exists t_student;<br>create table t_student(<br> no int(10),<br> name varchar(32)<br>);<br>desc t_student;</p>
+</li>
+</ul>
+<p>给t_student表格添加一个联系电话字段【增】<br>alter table t_student add tel varchar(10);<br>desc t_student;</p>
+<p>将t_student表格中的tel字段长度扩展到20个长度【改】<br>alter table t_student modify tel varchar(20);<br>desc t_student;</p>
+<p>将t_student表格中的tel字段删除【删】<br>alter table t_student drop tel;<br>desc t_student;</p>
+<ul>
+<li>增/删/改 表中的数据【insert，update，delete属于DML语句】<ul>
+<li>insert语法格式<br>insert into 表名(字段…) values(值…);</li>
+<li>update<br>语法格式：update tablename set 字段名=字段值，字段名=字段值，字段名=字段值 where 条件;<br>注意：update语句没有条件，会将一张表中所有的数据全部更新。</li>
+<li>delete<br>语法格式：delete from tablename where 条件;<br>注意：delete语句没有条件，会将一张表中所有的数据全部删除。</li>
+</ul>
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li><p>什么是约束，为什么要用约束</p>
+<ul>
+<li>约束对应的英语单词：constraint</li>
+<li>约束实际上就是表中数据的限制条件</li>
+<li>表在设计的时候加入约束的目的就是为了保证表中的记录完整和有效</li>
+</ul>
+</li>
+<li><p>约束包括哪些</p>
+<ul>
+<li>非空约束      （not null）</li>
+<li>唯一性约束     （unique） </li>
+<li>主键约束      （primary key）  简称PK</li>
+<li>外键约束       （foreign key） 简称FK</li>
+</ul>
+</li>
+<li><p>非空约束</p>
+<ul>
+<li>not null约束字段，不能为null值，必须给定具体的数据<br>创建表，给字段添加非空约束【创建用户表，用户名不能为空】<br>drop table if exists t_user;<br>create table t_user(<br> id int(10),<br> name varchar(32) not null,<br> email varchar(128)<br>);</li>
+</ul>
+</li>
+<li><p>唯一性约束</p>
+<ul>
+<li><p>unique约束的字段具有唯一性，不可重复<br>创建用户，保证邮箱地址唯一<br>create table t_user(<br> id int(10),<br> name varchar(32) not null,<br> email varchar(128) unique<br>);</p>
+<p>unique约束：约束的字段不能重复，但是可以为null，null不是一个值。<br>以上都是列级约束，就是写在了字段后面的约束，还有表级约束：<br>create table t_user(<br> id int(10),<br> name varchar(32) not null,<br> email varchar(128)，<br> unique(email)<br>);</p>
+<p>//使用表级约束给多个字段联合添加约束【以下程序表示name和email两个字段联合唯一，就是说必须email相同的同时name也要相同，只有一个相同不算唯一】<br>create table t_user(<br> id int(10),<br> name varchar(32) not null,<br> email varchar(128)，<br> unique(email，name)<br>);<br>//表级约束还可以给约束起名字<br>//为啥要起名字？因为以后要通过这个名字来删除这个约束。<br>create table t_user(<br> id int(10),<br> name varchar(32) not null,<br> email varchar(128)，<br> constraint t_user_email_unique unique(email)<br>);<br>//查询约束的名字<br>use information_schema;<br>show tables;<br>desc table_constraints;【该表格专门用来存储约束信息的】<br>select constraint_name from table_constraints where table_name = ‘t_user’;</p>
+</li>
+</ul>
+</li>
+<li><p>not null 和 unique可以联合使用吗？</p>
+<ul>
+<li>可以联合使用</li>
+<li>被not null unique约束的字段，既不能为空，也不能重复</li>
+</ul>
+</li>
+<li><p>主键约束-primary key-简称PK</p>
+<ul>
+<li><p>主键涉及到的术语：<br> 主键约束<br> 主键字段<br> 主键值</p>
+</li>
+<li><p>以上的主键约束，主键字段，主键值的关系<br>表中的某个字段添加主键约束之后，<br>该字段被称为主键字段，主键字段中<br>出现的每一个数据都被称为主键值</p>
+</li>
+<li><p>给某个字段添加主键约束primary key之后，该字段不能重复，并且也不能为空，效果和”not null unique”约束相同，但是本质不同，主键约束除了可以做到”not null unique”之外，主键字段还会默认添加”索引-index”</p>
+</li>
+<li><p>一张表应该有主键字段，若没有，表示这张表是无效的，”主键值”是当前行数据的唯一标识，”主键值”是当前行数据的身份证号，即使表中的两行记录相关的数据是相同的，但是由于主键值不同，我们认为这两行是完全不同的数据。</p>
+</li>
+<li><p>给一个字段添加主键约束，被称为单一主键。<br>//单一主键<br>//列级约束<br>drop table if exists t_user;<br>create table t_user(<br> id int(10) primary key,<br> name varchar(32)<br>);<br>//单一主键<br>//表级约束<br>//起名<br>drop table if exists t_user;<br>create table t_user(<br> id int(10),<br> name varchar(32)，<br> constraint t_user_id_pk primary key(id)<br>);</p>
+</li>
+<li><p>给多个字段联合添加一个主键约束，被称为复合主键(了解)<br>//复合主键<br>//表级约束<br>drop table if exists t_user;<br>create table t_user(<br> id int(10),<br> name varchar(32),<br> email varchar(128),<br> primary key(id,name)<br>);</p>
+<p>//复合主键<br>//表级约束<br>//起名<br>drop table if exists t_user;<br>create table t_user(<br> id int(10),<br> name varchar(32)，<br> email varchar(128),<br> constraint t_user_id_name_pk primary key(id,name)<br>);</p>
+</li>
+<li><p>无论是单一主键还是复合主键，一张表主键约束只能有一个</p>
+</li>
+</ul>
+</li>
+<li><p>自增约束</p>
+</li>
+</ul>
+<p>在MYSQL数据库管理系统中提供了一个自增的数字，专门用来自动生成主键值。主键值不需要用户维护，也不需要用户提供了，自动生成的，这个自增的数字默认从1开始，以1递增：1,2,3,4,5,6….</p>
+<p>drop table if exists t_user;<br>create table t_user(<br>   id int(10) primary key auto_increment,<br>   name varchar(32)<br>);<br>insert into t_user(name) values(‘jzh’);<br>insert into t_user(name) values(‘jch’);<br>insert into t_user(name) values(‘jhh’);<br>insert into t_user(name) values(‘jjh’);<br>insert into t_user(name) values(‘jkh’);<br>select * from t_user;</p>
+<ul>
+<li><p>外键约束 - foreigh key - 简称FK</p>
+<ul>
+<li><p>外键涉及到的术语：</p>
+<pre><code>外键约束
+外键字段
+外键值</code></pre></li>
+<li><p>外键约束、外键字段、外键值之间的关系？</p>
+<pre><code>某个字段添加外键约束之后，该字段称为外键字段。外键字段中的每一个数据都是外键值。</code></pre></li>
+<li><p>外键也分为：单一外键【给一个字段添加外键约束】和复合外键【给多个字段联合添加一个外键约束】</p>
+</li>
+<li><p>一张表中可以有多个外键字段。</p>
+</li>
+<li><p>分析场景：<br>设计数据库表用来存储学生和班级信息，给出两种解决方案：<br>学生信息和班级信息之间的关系，一个班级对应多个学生，这是典型的一对多的关系。</p>
+<p>第一种设计方案：将学生信息和班级信息存储到一张表中。<br>学生信息表：t_student</p>
+<table>
+<thead>
+<tr>
+<th>sno(pk)</th>
+<th>sname</th>
+<th>classno</th>
+<th>cname</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>jack</td>
+<td>100</td>
+<td>高三1班</td>
+</tr>
+<tr>
+<td>2</td>
+<td>lucy</td>
+<td>100</td>
+<td>高三1班</td>
+</tr>
+<tr>
+<td>3</td>
+<td>king</td>
+<td>200</td>
+<td>高三2班</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ford</td>
+<td>200</td>
+<td>高三2班</td>
+</tr>
+<tr>
+<td>5</td>
+<td>lisa</td>
+<td>300</td>
+<td>高三3班</td>
+</tr>
+<tr>
+<td>5</td>
+<td>jam</td>
+<td>300</td>
+<td>高三3班</td>
+</tr>
+</tbody></table>
+<p>以上设计的缺点：数据冗余</p>
+<p>第二种解决方案：将学生信息和班级信息分开两张表存储，学生表 + 班级表</p>
+<p>学生表：t_student</p>
+<table>
+<thead>
+<tr>
+<th>sno(pk)</th>
+<th>sname</th>
+<th>classno(fk)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>jack</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>lucy</td>
+<td>100</td>
+</tr>
+<tr>
+<td>3</td>
+<td>king</td>
+<td>200</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ford</td>
+<td>200</td>
+</tr>
+<tr>
+<td>5</td>
+<td>lisa</td>
+<td>300</td>
+</tr>
+<tr>
+<td>5</td>
+<td>jam</td>
+<td>300</td>
+</tr>
+</tbody></table>
+<p>班级表：t_class</p>
+<table>
+<thead>
+<tr>
+<th>cno(pk)</th>
+<th>cname</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100</td>
+<td>高三1班</td>
+</tr>
+<tr>
+<td>200</td>
+<td>高三2班</td>
+</tr>
+<tr>
+<td>300</td>
+<td>高三3班</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p> <strong>结论：为了保证t_student表中的classno字段中的数据必须来自于t_class表中cno字段中的数据，有必要给t_student表中的classno字段添加外键约束，classno字段被称为外键字段，该字段中的100 200 300被称为为外键值。classno这里是一个单一外键字段</strong><br><br><strong>注：外键值可以为null。</strong><br><br><strong>注：外键字段去引用一张表的某个字段的时候，被引用的字段可以不是主键，但是必须要具有unique约束。</strong><br><br><strong>注：有了外键引用之后，表分为父表和子表，以上父表是班级表，字表是学生表，创建表先创建父表，再创建子表，删除数据的时候先删除子表中的数据，再删除父表中的数据，插入数据的时候先插入父表中的数据，再插入子表中的数据。</strong><br>——————————————————————SQL文———————————————————————</p>
+</li>
+</ul>
+<ol>
+<li>在MYSQL数据库中外键约束没有列级约束，只有表级约束</li>
+<li>被引用的字段数据长度多少，外键字段长度也要一样</li>
+</ol>
+<p>drop table if exists t_student;<br>drop table if exists t_class;<br>create table t_class(<br>   cno int(3) primary key,<br>   cname varchar(128) not null unique<br>);<br>create table t_student(<br>   sno int(3) primary key,<br>   sname varchar(32) not null,<br>   classno int(3),<br>   constraint t_student_classno_fk foreign key(classno) reference t_class(cno)<br>   insert into t_class(cno,cname) values(100,’高三1班’);<br>   insert into t_class(cno,cname) values(200,’高三2班’);<br>   insert into t_class(cno,cname) values(300,’高三3班’);<br>   insert into t_student(sno,sname,classno) values(1,’jack’,100);<br>   insert into t_student(sno,sname,classno) values(2,’lucy’,100);<br>   insert into t_student(sno,sname,classno) values(3,’king’,200);<br>   insert into t_student(sno,sname,classno) values(4,’ford’,200);<br>   insert into t_student(sno,sname,classno) values(5,’lisa’,300);<br>   insert into t_student(sno,sname,classno) values(6,’jam’,300);<br>   select * from t_student;<br>   select * from t_class;</p>
+<p>   insert into t_student(sno,sname,classno) values(7,’jimmy’,500);//添加失败，500不存在<br>);<br>———————————————————————SQL文———————————————————————</p>
+<p><strong>重点：典型的一对多的设计是，在多的一方加外键。</strong></p>
+<h3 id="级联更新和删除"><a href="#级联更新和删除" class="headerlink" title="级联更新和删除"></a>级联更新和删除</h3><ul>
+<li>什么叫级联更新<br>比如我们把父表t_class中的100全部改成了400，那么子表t_student中的100也会跟着全部改成400.</li>
+<li>什么叫级联删除<br>比如我们把父表t_class中的100的记录全部删了，那么子表t_student中的100的记录也会跟着全部删了.</li>
+<li>谨慎使用级联更新和删除，因为级联操作会将数据改变或者删除【数据无价】</li>
+<li>添加级联更新和级联删除的时候需要在外键约束后面添加</li>
+<li>在删除父表中数据的时候，级联删除子表中的数据 on delete cascade<pre><code>\* 删除外键约束
+      alter table t_student drop foreign key t_student_classno_fk;
+\* 添加外键约束
+      alter table t_student add constraint t_student_classno_fk foreign key(classno) references t_class(cno) on delete cascade;</code></pre></li>
+<li>在更新父表中数据的时候，级联更新子表中的数据 on update cascade<pre><code>\* 删除外键约束
+      alter table t_student drop foreign key t_student_classno_fk;
+\* 添加外键约束
+      alter table t_student add constraint t_student_classno_fk foreign key(classno) references t_class(cno) on update cascade;</code></pre></li>
+</ul>
+<h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><ul>
+<li>存储引擎的使用<ul>
+<li>数据库中的各表均被(在创建表时)指定的存储引擎来处理</li>
+<li>服务器可用的引用依赖以下因素<ul>
+<li>MySQL的版本</li>
+<li>服务器在开发时如何被配置</li>
+<li>启动选项</li>
+</ul>
+</li>
+<li>为了解当前服务器中有哪些存储引擎可用，可使用show engines语句查看</li>
+</ul>
+</li>
+<li>常用的存储引擎<ul>
+<li>MyISAM存储引擎<br>MyISAM存储引擎是MySQL最常用的引擎，<br>他管理的表具有以下特征：<pre><code>使用三个文件表示每个表：
+   + 格式文件——存储表结构的定义(mytable.frm)
+   + 数据文件——存储表行的内容(mytable.MYD)
+   + 索引文件——存储表上索引(mytable.MYI)
+灵活的AUTO_INCREMENT字段处理
+可被转换为压缩，只读来节省空间</code></pre></li>
+<li>InnoDB存储引擎<br>InnoDB存储引擎是MySQL的缺省引擎<br>他管理的表具有下列主要特征：<pre><code>每个InnoDB表在数据库目录中以.frm格式文件表示
+InnoDB表空间tablespace被用于存储表的内容
+提供一组用来记录事务性活动的日志文件
+用COMMIT(提交)、SAVEPOINT及ROLLBACK(回滚)支持事务处理
+提供全ACID兼容
+再MySQL服务器崩溃后提供自动恢复
+多版本(MVCC)和行级锁定
+支持外键及引用的完整性，包括级联删除和更新</code></pre></li>
+<li>MEMORY存储引擎</li>
+</ul>
+</li>
+<li>选择合适的存储引擎<ul>
+<li>当创建表时，应根据表的应用场景选择适合的存储引擎</li>
+<li>MyISAM表最适合于大量的数据读而少量数据更新的混合操作<br>MyISAM表的另一种适用情形是使用压缩的只读表</li>
+<li>如果查询中包含较多的数据更新操作，应使用InnoDB，其行级锁机制和多版本的支持为数据读取和更新的混合操作提供了良好的并发机制</li>
+<li>可使用MEMORY存储引擎来存储非永久需要的数据，或者是能够从基于磁盘的表中重新生成的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><ol>
+<li><p>什么是事务</p>
+<ul>
+<li>事务对应的英语单词：Transaction</li>
+<li>事务：<br>* 一个”最小”的”不可再分”的工作单元<br>* 通常一个事务对应了一个完整的业务。【例如：银行账户转账业务，该业务就是一个最小的工作单元，就是从开始到结束不可再分步骤了，要么转账成功，要么失败，不存在你转钱过来我没收到钱然后你钱还没了不知道去哪了】<br>* 而一个完整的业务需要批量的DML语句(insert，update，delete)共同联合完成<br>* 事务只和DML语句有关系，或者说DML语句才有事务<br>* 以上所描述的”批量的DML语句”共有多少条DML语句，这个和业务逻辑有关系.业务逻辑不同DML语句的个数不同。</li>
+</ul>
+</li>
+<li><p>关于银行账户转账操作</p>
+<ul>
+<li>账户转账是一个完整的业务，最小的单元，不可再分。也就是说银行账户转账是一个事务。<br>t_act  账户表</li>
+</ul>
+<p>actno          balance<br>——————————————————————<br>act-001        50000.0<br>act-002        10000.0</p>
+<p>执行转账操作(10000):<br>   update t_act set balance= 40000.0 where actno=’act-001’;<br>   update t_act set balance=20000.0 where actno=’act-002’;<br>   以上的两条DML语句要求必须同时成功或者同时失败，最小单元，不可再分。<br>   当第一条DML语句执行成功之后，并不能将底层数据库中的第一个账户的数据修改，<br>   只是将操作记录了一下，这个记录是在内存中完成的，当第二条DML语句执行<br>   成功之后，和底层数据库文件中的数据完成同步，若第二条DML语句执行失败，<br>   清空所有的历史操作记录，要完成以上的功能，必须借助事务。</p>
+</li>
+<li><p>事务的四个特性(ACID)：</p>
+<ul>
+<li>原子性(A)<pre><code>\* 事务是最小的工作单元，不可再分</code></pre></li>
+<li>一致性(C)<pre><code>\* 事务要求所有的DML语句操作的时候，必须保证同时成功或者同时失败</code></pre></li>
+<li>隔离性(I)<pre><code>\* 事务A和事务B之间具有隔离</code></pre></li>
+<li>持久性(D)<pre><code>\* 是事务的保证，事务终结的标志【内存中的数据持久到硬盘文件中】</code></pre></li>
+</ul>
+</li>
+<li><p>关于一些术语</p>
+<ul>
+<li>开启事务：Start Transaction</li>
+<li>事务结束：End Transaction</li>
+<li>提交事务：Commit Transaction</li>
+<li>回滚事务：Rollback Transaction</li>
+</ul>
+</li>
+<li><p>和事务有关的两条重要的SQL语句【TCL】</p>
+<ul>
+<li>commit;      提交</li>
+<li>rollback;    回滚</li>
+</ul>
+</li>
+<li><p>事务开启的标志是什么？事务结束的标志是什么？</p>
+<ul>
+<li>开启的标志：<pre><code>任何一条DML语句(insert,update,delete)执行，标志事务的开启。</code></pre></li>
+<li>结束的标志：<pre><code>提交或者回滚
+提交：成功的结束，将所有的DML语句操作历史记录和底层硬盘文件中的数据来一次同步。
+回滚：失败的结束，将所有的DML语句操作历史记录全部清空。</code></pre></li>
+</ul>
+</li>
+<li><p>重点</p>
+<ul>
+<li>在事务进行过程中，未结束之前，DML语句是不会更改底层数据库文件中的数据，只是将历史操作记录一下，在内存中完成记录，只有在事务结束的时候，而且是成功的结束的时候才会修改底层硬盘文件中的数据。</li>
+</ul>
+</li>
+</ol>
+<h5 id="事务的提交与回滚演示"><a href="#事务的提交与回滚演示" class="headerlink" title="事务的提交与回滚演示"></a>事务的提交与回滚演示</h5><ol>
+<li>在MYSQL数据库管理系统中，事务的提交和回滚的演示</li>
+</ol>
+<p>我们打开一个dos窗口进入newdb数据库中查看t_transaction表中的数据</p>
+<p><img src="/2019/06/26/MySql笔记/%E6%9F%A5%E7%9C%8B%E8%A1%A8%E6%95%B0%E6%8D%AE.png" alt="查看表数据"></p>
+<p>然后我们插入一条数据</p>
+<p><img src="/2019/06/26/MySql笔记/%E6%8F%92%E5%85%A5%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95.png" alt="插入数据"></p>
+<p>然后我们再开启一个会话(重新开一个dos窗口)，进入newdb数据库下</p>
+<p><img src="/2019/06/26/MySql笔记/%E5%86%8D%E5%BC%80%E4%B8%80%E4%B8%AA%E4%BC%9A%E8%AF%9D.png" alt="再开一个会话"></p>
+<p>进入后再次查看t_transaction表中数据，发现插入刚才插入的数据成功了</p>
+<p><img src="/2019/06/26/MySql笔记/%E6%8F%92%E5%85%A5%E6%88%90%E5%8A%9F.png" alt="插入成功"></p>
+<ul>
+<li><p>而我们说过，事务开启是一条DML语句执行，结束是提交或者回滚，然而回滚表示失败，数据不会被修改，而我们这里数据被修改了，说明该语句执行完就被提交了，那么我们得出，我们MYSQL数据库管理系统中事务是支持默认自动提交事务的。也就是说，只要执行一条DML语句，就是开启了事务，并且提交了事务。</p>
+</li>
+<li><p>为什么我们要再开一个窗口看才算成功呢？因为我们说过，事务没提交前的操作都是操作历史记录，可以理解为在模拟真实数据，但他不是真实数据，只有提交后，才会按照我们的模拟效果修改真实数据，而我们如果同一个窗口查看的话，查看的只是历史记录，只是数据库模拟出来的数据，因为他觉得我们插入数据成功的话你显示数据肯定就有了，这都是模拟的历史记录，只有提交了才会成真，而我们重开一个窗口查看，如果有该记录的话，这才能说明算是提交成功了，因为重开的窗口不是之前的模拟记录了，是真实的了，真实的存在了该数据就说明提交成功了。</p>
+</li>
+<li><p>这种自动提交机制是可以关闭的：【以下关闭自动提交，这只是方式其一】</p>
+<pre><code>start transaction;</code></pre><p>   <img src="/2019/06/26/MySql笔记/%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A41.png" alt="关闭自动提交"></p>
+<pre><code>我们发现，start transaction 后，我们插入了数据，在历史记录中能查看有插入，但是重开窗口，真实的记录就没有，说明我们关闭了自动提交。</code></pre><p>   <img src="/2019/06/26/MySql笔记/%E6%89%8B%E5%8A%A8%E6%8F%90%E4%BA%A41.png" alt="手动提交"></p>
+<pre><code>然后我们只能进行手动提交，commit，提交后，再在第二个窗口查看，发现有了，说明提交成功。</code></pre><ul>
+<li>关闭的第一种方式<pre><code>start transaction;      手动开启事务
+DML语句....
+DML语句....
+DML语句....
+DML语句....
+DML语句....
+commit;                 手动提交事务【事务成功的结束】</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code>start transaction;      手动开启事务
+DML语句....
+DML语句....
+DML语句....
+DML语句....
+DML语句....
+rollback;                 手动提交事务【事务失败的结束】</code></pre><ul>
+<li>关闭自动提交的第二种方式<pre><code>查看当前是自动提交还是手动提交：show variables like &apos;%commit%&apos;;
+关闭自动提交：set autocommit = off; 或者 set session autocommit = off;
+打开自动提价：set autocommit = on; 或者 set session autocommit = on;
+以上打开和关闭自动提交机制，只对当前会话有效。</code></pre></li>
+</ul>
+<h5 id="事务的四个特性之一：隔离性-isolation"><a href="#事务的四个特性之一：隔离性-isolation" class="headerlink" title="事务的四个特性之一：隔离性(isolation)"></a>事务的四个特性之一：隔离性(isolation)</h5><ul>
+<li>事务A和事务B之间具有一定的隔离性</li>
+<li>隔离性有隔离级别(4个)<pre><code>read uncommitted 读未提交
+read committed   读已提交
+repeatable read  可重复读
+serializable     串行化</code></pre></li>
+<li>read uncommitted   读未提交<pre><code>事务A和事务B，事务A未提交的数据，事务B可以读取到。
+这里读取到的数据可以叫做&apos;脏数据&apos;或者叫做&apos;Dirty Read&apos;
+这种隔离级别是最低级别，这种级别一般都是在理论上存在的，数据库默认的隔离级别，一般都是高于该隔离级别的。</code></pre></li>
+<li>read committed     读已提交<pre><code>事务A和事务B，事务A提交的数据，事务B才能读取到
+这种隔离级别高于上面的读未提交
+换句话说：对方事务提交之后的数据，我当前事务才能够读到。
+这种隔离级别可以避免脏数据。
+这种隔离级别会导致&quot;不可重复读取&quot;(每次都是读取事务A提交的，所以每次读取都是新的数据，都不一样)</code></pre></li>
+<li>repeatable read    可重复读<pre><code>事务A和事务B，事务A提交之后的数据，事务B读取不到
+事务B是可重复读取数据的
+这种隔离级别高于读已提交
+换句话说：对方提交之后的数据我还是读取不到
+这种隔离级别可以避免&quot;脏读和不可重复读&quot;，达到可重复读取(比如银行查询总账，一般select语句执行半小时都不会结束，但是这半小时内肯定有客户存钱转钱，总账会发生变化，但是我们这半小时内查询的总账肯定不会算上这半小时内的金额变动了，所以我们这里读到的是之前的缓存，并没有从硬盘上读取实时数据)
+MYSQL数据库管理系统默认的隔离级别就是：可重复读
+虽然可以达到&quot;可重复读&quot;的效果，但是会导致:&quot;幻想读&quot;(读到的不是实时数据，而是缓存中的)</code></pre></li>
+<li>serializable       串行化<pre><code>事务A和事务B，事务A在操作数据库表中数据的时候，事务B只能排队等待。
+这种事务隔离级别一般很少使用，吞吐量太低，用户体验不好
+这种隔离级别可以避免&quot;幻想读&quot;，每一次读取的都是数据库表中真实的记录
+事务A和事务B不在并发。</code></pre></li>
+</ul>
+<h5 id="设置事务的隔离级别"><a href="#设置事务的隔离级别" class="headerlink" title="设置事务的隔离级别"></a>设置事务的隔离级别</h5><ol>
+<li><p>第一种方式：通过修改my.ini配置文件<br>   找到[mysqld]，在他的下面添加：transaction-isolation = READ-COMMITTED<br>   =后面可选值：READ-UNCOMMITTED/READ-COMMITTED/REPEATABLE-READ/SERIALIZABLE</p>
+</li>
+<li><p>第二种方式：使用命令方式设置事务的隔离级别<br>   <code>&lt;isolation-level&gt;</code>可选值：READ UNCOMMITTED/READ COMMITTED/REPEATABLE READ/SERIALIZABLE<br>   命令格式：set [无/session/global] transaction isolation level <code>&lt;isolation-level&gt;</code></p>
+<p>   设置事务的隔离级别作用于全局：</p>
+<pre><code>set global transaction isolation level `&lt;isolation-level&gt;`</code></pre><p>   设置事务的隔离级别作用于当前会话：</p>
+<pre><code>   set session transaction isolation level `&lt;isolation-level&gt;`
+或：set transaction isolation level `&lt;isolation-level&gt;`</code></pre></li>
+</ol>
+<h5 id="查看隔离级别"><a href="#查看隔离级别" class="headerlink" title="查看隔离级别"></a>查看隔离级别</h5><ul>
+<li>查看当前会话的隔离级别<ul>
+<li>select @@tx isolation;</li>
+<li>select @@session.tx isolation;</li>
+</ul>
+</li>
+<li>查看全局的事务隔离级别<ul>
+<li>select @@global.tx isolation;</li>
+</ul>
+</li>
+</ul>
+<h5 id="并发事务与隔离级别示例"><a href="#并发事务与隔离级别示例" class="headerlink" title="并发事务与隔离级别示例"></a>并发事务与隔离级别示例</h5><ul>
+<li><p>读未提交   read uncommitted</p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set global transaction isolation level read uncommitted;</td>
+<td></td>
+</tr>
+<tr>
+<td>退出dos窗口</td>
+<td></td>
+</tr>
+<tr>
+<td>重新开启dos窗口进入数据库系统select @@global.tx isolation;查看全局事务隔离级别，已经是读未提交了</td>
+<td></td>
+</tr>
+<tr>
+<td>use bjpowernode</td>
+<td></td>
+</tr>
+<tr>
+<td>start transaction;</td>
+<td>use bjpowernode</td>
+</tr>
+<tr>
+<td>insert into t_user(name) values(‘king’);</td>
+<td>start transaction;</td>
+</tr>
+<tr>
+<td></td>
+<td>select * from t_user;(会话1未提交，而这里读取到了)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>读已提交   repeatable read</p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set global transaction isolation level read committed;</td>
+<td></td>
+</tr>
+<tr>
+<td>退出dos窗口</td>
+<td></td>
+</tr>
+<tr>
+<td>重新开启dos窗口进入数据库系统select @@global.tx isolation;查看全局事务隔离级别，已经是读已提交了</td>
+<td></td>
+</tr>
+<tr>
+<td>use bjpowernode</td>
+<td></td>
+</tr>
+<tr>
+<td>start transaction;</td>
+<td>use bjpowernode</td>
+</tr>
+<tr>
+<td>insert into t_user(name) values(‘king’);</td>
+<td>start transaction;</td>
+</tr>
+<tr>
+<td></td>
+<td>select * from t_user;(会话1未提交，这里读取不到)</td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>select * from t_user;(会话1提交了，这里读取到了)</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li><p>可重复读   repeatable read</p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set global transaction isolation level repeatable read;</td>
+<td></td>
+</tr>
+<tr>
+<td>退出dos窗口</td>
+<td></td>
+</tr>
+<tr>
+<td>重新开启dos窗口进入数据库系统select @@global.tx isolation;查看全局事务隔离级别，已经是可重复读了</td>
+<td></td>
+</tr>
+<tr>
+<td>use bjpowernode</td>
+<td></td>
+</tr>
+<tr>
+<td>start transaction;</td>
+<td>use bjpowernode</td>
+</tr>
+<tr>
+<td>select * from t_user;</td>
+<td>start transaction;</td>
+</tr>
+<tr>
+<td>insert into t_user(name) values(‘king’);</td>
+<td></td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>select * from t_user;(会话1提交了，这里读取到了)</td>
+</tr>
+<tr>
+<td>drop table t_user;commit；(这里把表删了，提交，按道理读取不到了)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>select * from t_user;(这里还是能读取到，意味着我们读到的是缓存，每次读到的都是一样的缓存，在重复读)</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="索引【了解】"><a href="#索引【了解】" class="headerlink" title="索引【了解】"></a>索引【了解】</h3><ol>
+<li><p>什么是索引</p>
+<ul>
+<li>索引对应的英语单词：index</li>
+<li>索引相当于一本字典的目录，索引的作用是提高程序的检索【查询】效率。</li>
+</ul>
+</li>
+<li><p>主键自动添加索引，所以能够通过主键查询尽量通过主键查询，效率较高。</p>
+</li>
+<li><p>索引和表相同，都是一个对象，表示存储在硬盘文件中的，那么索引是表的一部分，索引也是存储在硬盘文件中</p>
+</li>
+<li><p>在MYSQL数据库管理系统中，对表中记录进行检索的时候，通常包括几种检索方式：</p>
+<ul>
+<li>第一种方式：全表扫描</li>
+<li>第二种方式：通过索引进行检索【提高查询效率】</li>
+</ul>
+</li>
+<li><p>一张表中有多个字段，每一个字段都是可以添加索引的。</p>
+</li>
+<li><p>什么情况下适合给表中的某个字段添加索引呢？</p>
+<ul>
+<li>该字段数据量庞大</li>
+<li>该字段很少的DML操作【DML操作很多的话，索引也是需要不断的维护，效率反而降低】</li>
+<li>该字段经常出现在where条件当中</li>
+</ul>
+</li>
+<li><p>怎么创建索引？</p>
+<ul>
+<li>create index dept_dname_index on dept(dname);</li>
+<li>create unique index dept_dname_index on dept(dname);//添加unique表示dept表中的dname字段添加一个唯一性约束</li>
+</ul>
+</li>
+<li><p>怎么删除索引？</p>
+<ul>
+<li>drop index dept dname index on dept;</li>
+</ul>
+</li>
+</ol>
+<h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><ul>
+<li><p>什么是视图<br> 如果，客户有一个业务，内容是，让我们将他给我们提供的一张数据表中的数据拿出来填充到网页上面，但是又不想让我们知道这张表的数据内容，那怎么办？<br><br> 这时，客户那边的数据库管理员就可以创建一个视图表，这个表对应了原来表上的任何数据，不过，他的显示出来的内容不再是原来的数据，而是客户自己设置的，把这个表给我们告诉我们增删改哪些数据就行了，最重要的是视图表被修改了，原来的那个表也会相应的被修改。可以理解为映射，比如原来表中有一个id字段，第一个值是1，然后客户就可以把id改成dd，1改成10，我们看到的就是dd和10，但是我们操作了dd和10之后，对应的id和1也会被修改。</p>
+</li>
+<li><p>创建视图<br> 语法：create view 视图名 as DQL语句;<br> 注意，as后面只能跟DQL查询语句，因为我们是将我们需要创建视图的表中数据拿出来创建视图，所以先将数据查询出来再放到视图中<br> 比如:create view t_userview as select * from t_user;<br> 这条语句就会创建一个和t_user表一样的视图表.</p>
+<p> 当然，如果不想让别人看到我们t_user表中真实的字段：<br> select view t_userview as select name as viewname,age as viewage from t_user;<br> 这样视图中的字段就变成viewname和viewage了</p>
+</li>
+</ul>
+<h3 id="DBA命令"><a href="#DBA命令" class="headerlink" title="DBA命令"></a>DBA命令</h3><ol>
+<li><p>新建用户</p>
+<ul>
+<li>create user 用户名 identified by ‘密码’;<br>密码如果为空，则直接回车就进入数据库</li>
+</ul>
+</li>
+<li><p>给用户赋予指定数据库的权限(在root超级管理员权限下)</p>
+<ul>
+<li>第一种必须先创建用户，然后执行该语句<br>grant all on 数据库名.数据库下的表名或者*代表所有 to 用户名;</li>
+<li>第二种给权限的时候直接创建用户<br>grant all on 数据库名.数据库下的表名或者*代表所有 to 用户名 identified by ‘密码’;</li>
+</ul>
+</li>
+<li><p>删除用户<br>drop user 用户名;</p>
+</li>
+<li><p>导出导入数据库</p>
+<ul>
+<li>导出整个数据库<br>打开dos窗口，进入mysql的bin目录下(不用登陆数据库)，执行：mysqldump 数据库名&gt;D:\路径\导出文件名.sql -uroot -p123</li>
+<li>导出指定库下的指定表<br>打开dos窗口，进入mysql的bin目录下(不用登陆数据库)，执行：mysqldump 数据库名 表名&gt;D:\路径\导出文件名.sql -uroot -p123</li>
+<li>导入<br>如果导入数据库，就进入mysql：source .sql文件绝对路径   回车<br>如果导入表，进入mysql，选择一个数据库：source .sql文件绝对路径   回车</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据库设计三范式"><a href="#数据库设计三范式" class="headerlink" title="数据库设计三范式"></a>数据库设计三范式</h3><ol>
+<li><p>数据库设计三范式</p>
+<ul>
+<li>设计数据库表的时候所依据的规范，共三个规范</li>
+</ul>
+</li>
+<li><p>第一范式</p>
+<ul>
+<li>要求有主键，并且要求每一个字段原子性不可再分</li>
+</ul>
+</li>
+<li><p>第二范式</p>
+<ul>
+<li>要求素有非主键字段完全依赖主键，不能产生部分依赖</li>
+</ul>
+</li>
+<li><p>第三范式</p>
+<ul>
+<li>所有非主键字段和主键字段之间不能产生传递依赖</li>
+</ul>
+</li>
+<li><p>几个比较经典的设计</p>
+<ul>
+<li>一对一</li>
+<li>一对多</li>
+<li>多对多</li>
+</ul>
 </li>
 </ol>
 
