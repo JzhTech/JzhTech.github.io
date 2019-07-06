@@ -27,7 +27,8 @@ body{
 }
 .content-home .name{
 	color:wheat;
-	text-shadow: 10px -10px 15px red;
+	text-shadow: 7px -7px 15px red;
+	filter: blur(1px);
 }
 div.cc{
 	height: 1px;
