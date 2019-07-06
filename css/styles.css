@@ -2,8 +2,7 @@
 
 /*# sourceMappingURL=styles.css.map */
 body{
-	/*background-color: black;*/
-	background:black url(../images/yw.jpg) repeat-x;
+	background-color: black;
 }
 .content-home .nav .item a{
 	color: white;
