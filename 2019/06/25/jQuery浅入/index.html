@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://jzhtech.github.io/2019/06/25/jQuery浅入/jq%E5%92%8Cjs%E5%AF%B9%E8%B1%A1.PNG">
 <meta property="og:image" content="https://jzhtech.github.io/2019/06/25/jQuery浅入/%E6%B4%97%E8%A1%A3%E6%9C%8D.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/06/25/jQuery浅入/jq%E5%AF%B9%E8%B1%A1.png">
-<meta property="og:updated_time" content="2019-06-25T10:26:39.933Z">
+<meta property="og:updated_time" content="2019-07-06T07:09:52.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery浅入">
 <meta name="twitter:description" content="简介（write less.do more.）初体验让div显示与设置内容： 1、需要引入jQuery文件 &amp;lt;script src=&amp;quot;jquery-1.12.4.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 2、入口函数$(function(){})$(document).ready(function(){})$(window).load(function(){})jQu">
@@ -166,17 +166,6 @@ ga('send', 'pageview');
             target="_self"
             >
             关于
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            rel="noopener noreferrer"
-            target="_blank"
-            >
-            RSS
           </a>
         </li>
       
@@ -433,7 +422,19 @@ ga('send', 'pageview');
 <p>.stop();停止当前在执行的动画</p>
 <h3 id="链式编程"><a href="#链式编程" class="headerlink" title="链式编程"></a>链式编程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			*&#123;</span><br><span class="line">				margin: 0;</span><br><span class="line">				padding: 0;</span><br><span class="line">				list-style: none;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;input type=&quot;button&quot; value=&quot;显示效果&quot; id=&quot;btn&quot; /&gt;</span><br><span class="line">		&lt;p&gt;人走茶凉，正常现象，人走茶没凉，世态炎凉&lt;/p&gt;</span><br><span class="line">		&lt;script src=&quot;js/jquery-1.12.4.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">			//在jQuery中，如果一个对象调用了一个方法，那么这个方法是设置的方式，一般调用</span><br><span class="line">			//后返回来的都是当前调用该方法的对象，具体的是不是这个对象，最好的方式，就是验证一下</span><br><span class="line">			</span><br><span class="line">			//页面加载事件</span><br><span class="line">			$(function()&#123;</span><br><span class="line">				//点击按钮，设置p的内容，样式</span><br><span class="line">				$(&quot;#btn&quot;).click(function()&#123;</span><br><span class="line">					//链式编程</span><br><span class="line">//					var txt = $(&quot;p&quot;).text(&quot;这是一个p&quot;);</span><br><span class="line">//					console.log(txt);//返回的还是$(&quot;p&quot;)，所以可以继续链式</span><br><span class="line">					$(&quot;p&quot;).text(&quot;这是一个p&quot;).css(&#123;&quot;fontSize&quot;:&quot;30px&quot;,&quot;color&quot;:&quot;red&quot;,</span><br><span class="line">					&quot;fontFamily&quot;:&quot;全新硬笔行书简&quot;&#125;).mouseenter(function()&#123;</span><br><span class="line">						$(this).css(&quot;background-color&quot;,&quot;blue&quot;);</span><br><span class="line">					&#125;).mouseleave(function()&#123;</span><br><span class="line">						$(this).css(&quot;backgroundColor&quot;,&quot;green&quot;)</span><br><span class="line">					&#125;).click(function()&#123;</span><br><span class="line">						alert(&quot;我被点了&quot;);</span><br><span class="line">					&#125;);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.9.0">
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+            body{
+                background:url(/images/背景.jpg) no-repeat fixed;
+            }
+        </style>
+    </head>
+    <body></body>
+</html>
     
   </div>
 
@@ -553,17 +554,6 @@ ga('send', 'pageview');
               target="_self"
               >
               关于
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              rel="noopener noreferrer"
-              target="_blank"
-              >
-              RSS
             </a>
           </li>
         
