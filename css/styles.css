@@ -25,6 +25,9 @@ body{
 .item-year a.text-year{
 	color: deepskyblue;
 }
+.content-home .name{
+	color:wheat;
+}
 div.cc{
 	height: 1px;
 	width: 1px;
