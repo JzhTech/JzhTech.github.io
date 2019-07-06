@@ -2,7 +2,8 @@
 
 /*# sourceMappingURL=styles.css.map */
 body{
-	background-color: black;
+	/*background-color: black;*/
+	background:black url(../images/yw.jpg) repeat-x;
 }
 .content-home .nav .item a{
 	color: white;
@@ -27,6 +28,7 @@ body{
 }
 .content-home .name{
 	color:wheat;
+	text-shadow: 10px -10px 15px red;
 }
 div.cc{
 	height: 1px;
