@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>会话技术 | 泽恒</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="cookie&amp;&amp;session,">
+  
+
+  <meta name="description" content="简介 存储客户端的状态 由一个问题引出会话技术的必要性，例如网站的购物系统，用户将购买的商品信息存储到哪里？因为Http协议是无状态的，也就是说每个客户访问服务端资源时，服务器并不知道该客户端是谁，所以需要会话技术识别客户端的状态，会话技术是帮助服务器记住客户端状态（区分客户端） 更通俗的例子： 通常我们浏览一个网站，比如淘宝，我们在未登录的状态下，加购了商品，那么我们的客户端就会显示我们加购了哪">
+<meta name="keywords" content="cookie&amp;&amp;session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="会话技术">
+<meta property="og:url" content="https://JzhTech.github.io/2019/07/15/会话技术/index.html">
+<meta property="og:site_name" content="泽恒">
+<meta property="og:description" content="简介 存储客户端的状态 由一个问题引出会话技术的必要性，例如网站的购物系统，用户将购买的商品信息存储到哪里？因为Http协议是无状态的，也就是说每个客户访问服务端资源时，服务器并不知道该客户端是谁，所以需要会话技术识别客户端的状态，会话技术是帮助服务器记住客户端状态（区分客户端） 更通俗的例子： 通常我们浏览一个网站，比如淘宝，我们在未登录的状态下，加购了商品，那么我们的客户端就会显示我们加购了哪">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/15/会话技术/Cookie%E5%9B%BE%E8%A7%A3.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/15/会话技术/%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E4%B8%8A%E6%AC%A1%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/15/会话技术/session%E5%9B%BE%E8%A7%A3.png">
+<meta property="og:updated_time" content="2019-07-17T04:06:59.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="会话技术">
+<meta name="twitter:description" content="简介 存储客户端的状态 由一个问题引出会话技术的必要性，例如网站的购物系统，用户将购买的商品信息存储到哪里？因为Http协议是无状态的，也就是说每个客户访问服务端资源时，服务器并不知道该客户端是谁，所以需要会话技术识别客户端的状态，会话技术是帮助服务器记住客户端状态（区分客户端） 更通俗的例子： 通常我们浏览一个网站，比如淘宝，我们在未登录的状态下，加购了商品，那么我们的客户端就会显示我们加购了哪">
+<meta name="twitter:image" content="https://jzhtech.github.io/2019/07/15/会话技术/Cookie%E5%9B%BE%E8%A7%A3.png">
+
+  
+
+  
+    <link rel="icon" href="/images/泽.jpg">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie的创建和发送"><span class="toc-text">Cookie的创建和发送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie的一些API设置"><span class="toc-text">Cookie的一些API设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie实现显示用户上次访问时间案例"><span class="toc-text">Cookie实现显示用户上次访问时间案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session技术"><span class="toc-text">session技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSESSIONID的持久化"><span class="toc-text">JSESSIONID的持久化</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-会话技术" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">会话技术</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.07.15</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Jzh</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/JavaWeb/">JavaWeb</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ol>
+<li><p><b>存储客户端的状态</b></p>
+<p>由一个问题引出会话技术的必要性，例如网站的购物系统，用户将购买的商品信息存储到哪里？因为Http协议是无状态的，也就是说每个客户访问服务端资源时，服务器并不知道该客户端是谁，所以需要会话技术识别客户端的状态，会话技术是帮助服务器记住客户端状态（区分客户端）</p>
+<p>更通俗的例子：<br> 通常我们浏览一个网站，比如淘宝，我们在未登录的状态下，加购了商品，那么我们的客户端就会显示我们加购了哪些商品，但是，我们是未登录的状态，服务器怎么知道我们加购了这些商品呢？比如，两个电脑同时加购了不同的商品，都是未登录状态，按道理来说，商品信息存在服务端的话，又不能区分这些商品具体谁加购的，所以既然不能区分谁是谁的信息，那应该会将这所有的信息不管谁的都放在一起，但是都放在一起的话，这两个客户端去显示应该都从这里面拿数据导致会显示两个人加购的所有商品了。所以我们有一个问题，客户端是无状态的，无法区分谁是谁的，我们又要给每一个客户端分配一个独属于自己的内存放置信息，让他们能各自显示自己的数据，这就需要用到会话技术。</p>
+</li>
+</ol>
+<p>cookie和session，都是用来存无状态的客户端的数据的，区别在于cookie是将数据存在客户端的本地，session是在服务器单独开辟一块内存存放具体哪个客户端的数据。</p>
+<ol start="2">
+<li><p>会话技术</p>
+<p> 从打开一个浏览器访问某个站点，到关闭这个浏览器的整个过程，称为一次会话。会话技术就是记录这次会话中客户端的状态与数据的。<br> 会话技术分为Cookie和Session：<br> Cookie：数据存储在客户端本地，减少服务器端的存储的压力，安全性不好，客户端可以清除cookie<br> Session：将数据存储到服务器端，安全性相对好，增加服务器的压力</p>
+</li>
+</ol>
+<h3 id="Cookie的创建和发送"><a href="#Cookie的创建和发送" class="headerlink" title="Cookie的创建和发送"></a>Cookie的创建和发送</h3><p>Cookie技术是将用户的数据存储到客户端的技术</p>
+<p>Cookie图解</p>
+<p><img src="/2019/07/15/会话技术/Cookie%E5%9B%BE%E8%A7%A3.png" alt="Cookie图解"></p>
+<p>我们看Cookie技术的购物过程这张图，左边框框是代表客户端，右边是服务器，我们在客户端(浏览器上)点击加购一个商品，此时等于向服务器发送了请求，服务器会将商品信息创建cookie通过response返回给我们，这里我们要明白，这个cookie信息(set-cookie：goods=手机)是放在响应体吗？答案是否的，因为响应体是给浏览器解析显示页面的，而我们的cookie信息并不是显示的，而是给我们存到客户端本地系统的，所以是放在响应头中传递过来的。然后，我们结账的时候，客户端从本地拿到存的cookie信息点击结账页面的时候将该信息放在请求头中传递过去(cookie：goods=手机)，然后获得goods的手机信息进行结账，所以从该图我们可以得出cookie分两方面学习：<br>第一，服务器端怎样将一个Cookie发送到客户端<br>第二，服务器端怎样接受客户端携带的Cookie</p>
+<ol>
+<li><p>服务器端向客户端发送一个Cookie</p>
+<ol>
+<li><p>创建Cookie：<br><code>Cookie cookie = new Cookie(String cookieName,String cookieValue);</code><br>示例：<br> Cookie cookie = new Cookie(“username”,”zhangsan”);</p>
+<p> 那么该cookie会以响应头的形式发送给客户端：<br> Set-Cookie:”username=zhangsan”</p>
+<p> <strong>注意：Cookie中不能存储中文,并且cookie值是字符串，因为他被持久化保存是存在磁盘文件中的</strong></p>
+<ol start="2">
+<li>向客户端发送cookie：<br><code>response.addCookie(Cookie cookie);</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="Cookie的一些API设置"><a href="#Cookie的一些API设置" class="headerlink" title="Cookie的一些API设置"></a>Cookie的一些API设置</h3><ol>
+<li><p>Cookie默认存储时间和存储位置</p>
+<ul>
+<li>Cookie默认是会话级别的(存储时间是一次会话)，为啥呢？</li>
+<li>因为Cookie默认是存储在客户端内存中的，所以关闭客户端(浏览器)内存中Cookie被清除就没有了，我们想要持久化就得放在硬盘</li>
+</ul>
+</li>
+<li><p>设置Cookie在客户端的持久化时间—-cookie信息在硬盘上保存的时间<br><code>cookie.setMaxAge(int seconds);</code>—–时间秒</p>
+</li>
+</ol>
+<p><strong>注意：如果不设置持久化时间，cookie会存储在浏览器的内存中，浏览器关闭cookie信息销毁(会话级别的cookie)，如果设置持久化时间，cookie信息会被持久化到浏览器的磁盘文件里，是浏览器自己帮我们存的，而且不同的浏览器存放的位置不同</strong><br>示例：<br><code>cookie.setMaxAge(10*60);</code><br>设置cookie信息在浏览器的磁盘文件中存储的时间是10分钟，过期浏览器自动删除该cookie信息</p>
+<ol start="3">
+<li>设置Cookie的携带路径<br><code>cookie.setPath(String path);</code></li>
+</ol>
+<p>示例：<br><code>cookie.setPath(&quot;/WEB01/sendCookie&quot;);</code>—-访问sendCookie资源时才携带这个cookie</p>
+<p><code>cookie.setPath(&quot;/WEB01&quot;);</code>—–访问WEB01下的任何资源时都携带这个cookie</p>
+<p><code>cookie.setPath(&quot;/&quot;);</code>—–访问服务器下的所有的资源都携带这个cookie</p>
+<p><strong>注意：如果不设置携带路径，那么该cookie信息会在访问产生该cookie的web资源所在的路径都携带cookie信息(同级的意思)比如，访问/WEB01/demo/sendCookie产生了cookie的话，只有访问/WEB01/demo/某个url,才会携带cookie</strong></p>
+<ol start="4">
+<li><p>删除客户端的cookie<br>如果想删除客户端的已经存储的cookie信息，那么就是用<font color="red"><b>同名同路径的持久化时间为0</b></font>的cookie进行覆盖即可。</p>
+</li>
+<li><p>服务器端获取cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//获得客户端携带的cookie的数据</span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line">//通过cookie名称获得想要的cookie</span><br><span class="line">if(cookies!=null)&#123;</span><br><span class="line">	for(Cookie cookie:cookies)&#123;</span><br><span class="line">		//获得cookie的名称</span><br><span class="line">		String cookieName = cookie.getName();</span><br><span class="line">		if(cookieName.equals(&quot;name&quot;))&#123;</span><br><span class="line">			//获得该cookie的值</span><br><span class="line">			String cookieValue = cookieName.getValue();</span><br><span class="line">			System.out.println(cookieValue);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Cookie实现显示用户上次访问时间案例"><a href="#Cookie实现显示用户上次访问时间案例" class="headerlink" title="Cookie实现显示用户上次访问时间案例"></a>Cookie实现显示用户上次访问时间案例</h3><ol>
+<li>分析</li>
+</ol>
+<p><img src="/2019/07/15/会话技术/%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E4%B8%8A%E6%AC%A1%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4.png" alt="显示用户上次访问时间"></p>
+<ol start="2">
+<li>服务器端代码实现</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//获得当前时间</span><br><span class="line">Date date = new Date();</span><br><span class="line">SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;);</span><br><span class="line">String currentTime = format.format(date);</span><br><span class="line"></span><br><span class="line">//1. 创建Cookie 记录当前的最新的访问时间</span><br><span class="line">Cookie cookie = new Cookie(&quot;lastAccessTime&quot;,currentTime);</span><br><span class="line">cookie.setMaxAge(60*10*500);</span><br><span class="line">response.addCookie(cookie);</span><br><span class="line"></span><br><span class="line">//2. 获得客户端携带cookie------lastAccessTime</span><br><span class="line">Strign lastAccessTime =null;</span><br><span class="line">Cookie[] cookies request.getCookies();</span><br><span class="line">if(cookies!=null)&#123;</span><br><span class="line">	for(Cookie coo:cookies)&#123;</span><br><span class="line">		if(&quot;lastAccessTime&quot;.equals(coo.getName()))&#123;</span><br><span class="line">			lastAccessTime = coo.getValue();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//让服务器将中文信息封装到response对象中时不用iso8859-1编码，用utf-8编码，并且告诉客户端以utf-8码表解码</span><br><span class="line">//response.setCharacterEncodding(&quot;utf-8&quot;);</span><br><span class="line">//response.setHeader(&quot;Content-Type&quot;,&quot;text/html;charset=utf-8&quot;);</span><br><span class="line">//以上解决中文乱码的两行代码被简化成了一条，用下面这条可以表示以上两条代码</span><br><span class="line">response.setContentType(&quot;text/html;charset=utf-8&quot;);</span><br><span class="line">if(lastAccessTime==null)&#123;</span><br><span class="line">	response.getWriter().write(&quot;您是第一次访问&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	response.getWriter().write(&quot;您上次的访问的时间是：&quot;+lastAccessTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="session技术"><a href="#session技术" class="headerlink" title="session技术"></a>session技术</h3><ol>
+<li>介绍</li>
+</ol>
+<p>Session技术是将数据存储在服务器端的技术，会为每个客户端都创建一块内存空间存储客户的数据，但客户端需要每次都携带一个标识ID去服务器中寻找属于自己的内存空间。所以说Session的实现时基于Cookie，Session需要借助于Cookie存储客户的唯一性标识JSESSIONID</p>
+<p>在Session这我们需要学习以下三个问题：<br>怎样获得属于本客户端的session对象(内存区域)？<br>怎样向session中存取数据(session也是一个域对象)？<br>session对象的声明周期？</p>
+<ol start="2">
+<li>session图解</li>
+</ol>
+<p><img src="/2019/07/15/会话技术/session%E5%9B%BE%E8%A7%A3.png" alt="session技术"></p>
+<ol start="3">
+<li>获得Session对象<br><code>HttpSession session = request.getSession();</code>—–request对象内部维护这个session区域的id，所以通过request对象获取session</li>
+</ol>
+<p>服务器端代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//创建属于该客户端(会话)的私有的session区域</span><br><span class="line">/*</span><br><span class="line">	request.getSession()方法内部会判断该客户端是否在服务器端已经存在session</span><br><span class="line">	如果该客户端在此服务器不存在session，那么就会创建一个新的seesion对象</span><br><span class="line">	如果该客户端在此服务器已经存在session，获得已经存在的session返回</span><br><span class="line">	他的实质就是根据JSESSIONID判断该客户端是否在服务器上已经存在session了，第一次访问如果request中没有JSEESIONID则表示没有session，会创建一个新的session和该session的id，这个id会传递给客户端，下次再访问就会根据request获得这个id找到对应的session</span><br><span class="line">*/</span><br><span class="line">HttpSession session = request.getSession();</span><br><span class="line">String id = seesion.getId();//该session对象的编号ID</span><br><span class="line">response.getWriter().write(&quot;JSESSIONID&quot;+id);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>怎样向session中存取数据(session也是一个域对象)<br>Session也是存储数据的区域对象，所以session对象也具有如下三个方法：<br>session.setAttribute(String name,Object obj);<br>session.getAttribute(String name);<br>session.removeAttribute(String name);</li>
+</ol>
+<p>在url为/WEB01/setsession的servlet中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = request.getSession();</span><br><span class="line">//不用判断session是否为空了，因为你没有session他会重新给你创建一个</span><br><span class="line">session.setAttribute(&quot;name&quot;,&quot;jerry&quot;);</span><br><span class="line">String id = seesion.getId();//该session对象的编号ID</span><br><span class="line">response.getWriter().write(&quot;JSESSIONID&quot;+id);</span><br></pre></td></tr></table></figure>
+
+<p>在url为/WEB01/getsession的servlet中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = request.getSession();</span><br><span class="line">String attribute = (String)session.getAttribute(&quot;name&quot;);</span><br><span class="line">response.getWriter().write(attribute);</span><br></pre></td></tr></table></figure>
+
+<p>先访问/WEB01/setsession，再访问/WEB01/getsession,就能获取到，如果是request不行，request域的范围是一次请求，除非请求转发才可以(request.getRequestDispatcher().forward(request,response))</p>
+<ol start="5">
+<li><p>Session对象的声明周期(面试题/笔试题)<br>创建：第一次执行request.getSession()时创建<br>销毁：</p>
+<ul>
+<li>服务器（非正常）关闭时（服务器关闭会清空内存）</li>
+<li>session过期/失效（默认30分钟）<br>问题:时间的起算点 从何时开始计算30分钟<br>从不操作服务器端的资源开始计时</li>
+</ul>
+<p>可以再工程的web.xml中进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;session-config&gt;</span><br><span class="line">	&lt;session-timeout&gt;30&lt;/session-timeout&gt;</span><br><span class="line">&lt;/session-config&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>手动销毁session<br>session.invalidate();</li>
+</ul>
+<p>作用范围：<br>默认在一次会话中，也就是说在，一次会话中任何资源公用一个session对象（因为cookie的默认时长是一次会话）</p>
+</li>
+</ol>
+<h3 id="JSESSIONID的持久化"><a href="#JSESSIONID的持久化" class="headerlink" title="JSESSIONID的持久化"></a>JSESSIONID的持久化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = request.getSession();</span><br><span class="line">session.setAttribute(&quot;name&quot;,&quot;jerry&quot;);</span><br><span class="line">String id = seesion.getId();//该session对象的编号ID</span><br><span class="line">//手动创建一个存储JSESSIONID的Cookie，为该cookie设置持久化时间</span><br><span class="line">Cookie cookie = new Cookie(&quot;JSESSIONID&quot;,id);</span><br><span class="line">cookie.setPath(&quot;/WEB01/&quot;);</span><br><span class="line">cookie.setMaxAge(60*10);</span><br><span class="line">response.addCookie(cookie);</span><br><span class="line">response.getWriter().write(&quot;JSESSIONID:&quot;+id);</span><br></pre></td></tr></table></figure>
+
+<!DOCTYPE html>
+<html>
+   <head><meta name="generator" content="Hexo 3.9.0">
+      <meta charset="utf-8">
+      <title></title>
+      <style type="text/css">
+         body{
+            background:url(/images/背景.jpg) no-repeat fixed;
+         }
+      </style>
+   </head>
+   <body></body>
+</html>
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">联系我</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，添加JzhBetter</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.jpg" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>qq扫一扫</span>
+            
+            <img src="/images/qq.jpg" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/07/06/网页素材/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/07/17/jsp/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '277317290454635afa73',
+  clientSecret: '78223c859304da5e8d71bfce136d436c6ff95c37',
+  repo: 'blog-comment',
+  owner: 'forsigner',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: location.pathname,
+  admin: ['forsigner'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
