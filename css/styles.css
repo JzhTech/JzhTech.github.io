@@ -40,3 +40,6 @@ div.cc{
 	left:0;
 	top: 0;
 }
+.article-content p,.article-content ol,.article-content p, .article-content ol, .article-content ul, .article-content p, .article-content ul,.article-content p{
+	color: black;
+}

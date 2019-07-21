@@ -12,17 +12,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+    <meta name="keywords" content="JSP,">
   
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="jsp的简介 servlet中输出一个html页面很繁琐： 12345678PrintWriter out = response.getWriter();out.write(&amp;quot;&amp;lt;html&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;head&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;/head&amp;gt;&amp;quot;);out.write(&amp;quo">
+<meta name="keywords" content="JSP">
+<meta property="og:type" content="article">
 <meta property="og:title" content="jsp">
 <meta property="og:url" content="https://JzhTech.github.io/2019/07/17/jsp/index.html">
 <meta property="og:site_name" content="泽恒">
+<meta property="og:description" content="jsp的简介 servlet中输出一个html页面很繁琐： 12345678PrintWriter out = response.getWriter();out.write(&amp;quot;&amp;lt;html&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;head&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;/head&amp;gt;&amp;quot;);out.write(&amp;quo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-17T04:07:48.329Z">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/jsp%E7%9A%84%E5%87%BA%E7%8E%B0.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/%E9%A1%B5%E9%9D%A2%E5%8C%85%E5%90%AB.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/out%E7%BC%93%E5%86%B2%E5%8C%BA.png">
+<meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/%E9%9D%99%E6%80%81%E4%B8%8E%E5%8A%A8%E6%80%81%E5%8C%85%E5%90%AB%E5%8C%BA%E5%88%AB.png">
+<meta property="og:updated_time" content="2019-07-21T07:07:28.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsp">
+<meta name="twitter:description" content="jsp的简介 servlet中输出一个html页面很繁琐： 12345678PrintWriter out = response.getWriter();out.write(&amp;quot;&amp;lt;html&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;head&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;/head&amp;gt;&amp;quot;);out.write(&amp;quo">
+<meta name="twitter:image" content="https://jzhtech.github.io/2019/07/17/jsp/jsp%E7%9A%84%E5%87%BA%E7%8E%B0.png">
 
   
 
@@ -179,6 +188,11 @@ ga('send', 'pageview');
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp的简介"><span class="toc-text">jsp的简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp脚本和注释"><span class="toc-text">jsp脚本和注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp内置-隐式对象-9个-——-笔试面试题"><span class="toc-text">jsp内置/隐式对象(9个)——-笔试面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于四种域对象的总结"><span class="toc-text">关于四种域对象的总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsp的标签（动作）"><span class="toc-text">jsp的标签（动作）</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
@@ -200,6 +214,11 @@ ga('send', 'pageview');
       
 
       
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/JavaWeb/">JavaWeb</a>
+  </span>
+
 
 
       
@@ -217,7 +236,165 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      
+      <h3 id="jsp的简介"><a href="#jsp的简介" class="headerlink" title="jsp的简介"></a>jsp的简介</h3><p><img src="/2019/07/17/jsp/jsp%E7%9A%84%E5%87%BA%E7%8E%B0.png" alt="jsp的出现"></p>
+<p>servlet中输出一个html页面很繁琐：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.write(&quot;&lt;html&gt;&quot;);</span><br><span class="line">out.write(&quot;&lt;head&gt;&quot;);</span><br><span class="line">out.write(&quot;&lt;/head&gt;&quot;);</span><br><span class="line">out.write(&quot;&lt;body&gt;&quot;);</span><br><span class="line">out.write(&quot;&lt;h1&gt;原始servlet动态页面&lt;/h1&gt;&quot;);</span><br><span class="line">out.write(&quot;/body&quot;);</span><br><span class="line">out.write(&quot;&lt;/html&gt;&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="jsp脚本和注释"><a href="#jsp脚本和注释" class="headerlink" title="jsp脚本和注释"></a>jsp脚本和注释</h3><ol>
+<li><p>jsp脚本：</p>
+<ul>
+<li>&lt;%java代码%&gt;<br>不带！，jsp页面被翻译成java页面后，不带！的jsp脚本会被翻译到service方法中</li>
+<li>&lt;%=java变量或表达式%&gt;—-&gt;在页面输出<pre><code>表达式：1+1</code></pre>会被翻译成service方法的内部out.print()</li>
+<li>&lt;!%java代码%&gt;<br>带！，jsp页面被翻译成java页面后，带！的jsp脚本会被翻译到service方法外面（成员变量），所以这个里面可以写方法，而不带！的不能写方法，因为方法中不能嵌方法</li>
+</ul>
+</li>
+<li><p>注释：不同的注释可见范围不同</p>
+<ul>
+<li>html注释：<code>&lt;!--注释内容--&gt;</code><br>可见范围：jsp源码，翻译后的servlet，页面显示的html源码</li>
+<li>java注释：<code>//单行注释  /*多行注释*/</code><br>可见范围：jsp源码，翻译后的servlet</li>
+<li>jsp注释：<code>&lt;%--注释内容--%&gt;</code><br>可见范围：jsp源码</li>
+</ul>
+</li>
+<li><p>jsp运行原理—–jsp本质就是servlet<br>jsp在第一次被访问时会被Web容器翻译成servlet，再执行。<br>过程：第一次访问—–&gt;helloServlet.jsp——&gt;helloServlet_jsp.java——-&gt;编译运行<br>ps:被翻译后的servlet在Tomcat的work目录中可以找到</p>
+</li>
+</ol>
+<ol start="4">
+<li>jsp的指令(3个)<br>jsp的指令是指导jsp翻译和运行的命令，jsp包括三大指令：</li>
+<li>page指令—属性最多的指令(实际)<br>属性最多的一个指令，根据不同的属性，知道整个页面特性<br>格式:&lt;%@ page 属性名1=”属性值1” 属性名2=”属性值2”…%&gt;<br>常用属性如下：</li>
+</ol>
+<p>language:jsp脚本中可以嵌入的语言种类</p>
+<p>pageEncoding:当前jsp文件本身的编码</p>
+<p>contentType:response.setContentType(“text/html;charset=utf-8”);</p>
+<p>import:导入java的包</p>
+<p>errorPage：当前页面出错后跳转到哪个页面</p>
+<p>isErrorPage：当前页面是一个处理错误的页面</p>
+<p>session:是否jsp在翻译时自动创建session</p>
+<p>buffer:out缓冲区的大小，通过out.write()输出的数据会先放入out缓冲区，输出时再放到response缓冲区，默认大小8kb，设置为0kb的话等于关闭了，输出数据就会直接放入response缓冲区了，response缓冲区是不能关闭的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html;charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot; isErrorPage=&quot;true&quot; errorPage=&quot;/error.jsp&quot; buffer=&quot;8kb&quot;%&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：errorPage只能配置500的错误，404不行，因为404连该页面都找不到，如果要404的错误页面的话，可以再web.xml中配置web应用的全局的错误页面</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;error-page&gt;</span><br><span class="line">	&lt;error-code&gt;404&lt;/error-code&gt;</span><br><span class="line">	&lt;location&gt;/error.jsp&lt;/location&gt;</span><br><span class="line">&lt;/error-page&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>include指令<br>页面包含(静态包含)指令，可以将一个jsp页面包含到另一个jsp页面中<br>格式：&lt;%@ include file=”被包含的jsp地址”%&gt;</li>
+</ol>
+<p><img src="/2019/07/17/jsp/%E9%A1%B5%E9%9D%A2%E5%8C%85%E5%90%AB.png" alt="页面包含"></p>
+<ol start="3">
+<li>taglib指令<br>在jsp页面中引入标签库(jstl标签库、struts2标签库)<br>格式：&lt;%@ taglib uri=”标签库地址” prefix=”前缀”%&gt;</li>
+</ol>
+<h3 id="jsp内置-隐式对象-9个-——-笔试面试题"><a href="#jsp内置-隐式对象-9个-——-笔试面试题" class="headerlink" title="jsp内置/隐式对象(9个)——-笔试面试题"></a>jsp内置/隐式对象(9个)——-笔试面试题</h3><ol>
+<li>是什么？<br>就是&lt;%…%&gt;中可以直接使用的对象。<br>jsp被翻译成servlet之后，&lt;%…%&gt;中的代码会被放在service方法中，然而service方法外面，也就是成员变量已经定义并初始化完毕了这9个对象，所以我们在jsp脚本中可以直接使用这9个对象</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><font color="red">out</font></td>
+<td>javax.servlet.jsp.JspWriter</td>
+<td>用于页面输出</td>
+</tr>
+<tr>
+<td>request</td>
+<td>javax.servlet.http.HttpServletRequest</td>
+<td>得到用户请求信息</td>
+</tr>
+<tr>
+<td>response</td>
+<td>javax.servlet.http.HttpServletResponse</td>
+<td>服务器向客户端的回应信息</td>
+</tr>
+<tr>
+<td>config</td>
+<td>javax.servlet.ServletConfig</td>
+<td>服务器配置，可以取得初始化参数</td>
+</tr>
+<tr>
+<td>session</td>
+<td>javax.servlet.http.HttpSession</td>
+<td>用来保存用户的信息</td>
+</tr>
+<tr>
+<td>application</td>
+<td>javax.servlet.ServletContext</td>
+<td>所有用户的共享信息</td>
+</tr>
+<tr>
+<td>page</td>
+<td>java.lang.Object</td>
+<td>指当前页面转换后的Servlet类的实例</td>
+</tr>
+<tr>
+<td><font color="red">pageContext</font></td>
+<td>javax.servlet.jsp.PageContext</td>
+<td>JSP的页面容器</td>
+</tr>
+<tr>
+<td>exception</td>
+<td>java.lang.Throwable</td>
+<td>表示JSP页面所发生的异常，在错误页中才起作用</td>
+</tr>
+</tbody></table>
+<p><strong>提醒：<br>config属于ServletConfig类型，之前servlet中说过，他有三个作用，获取servletname，获取servlet初始化参数，获得ServletContext对象。<br>exception对象只有在page指令中添加了isErrorPage属性值为true的jsp页面翻译后的java文件中定义了该对象，用来接收错误信息的，因为只有发生错误跳转到错误页面才能有错误对象及信息。</strong></p>
+<ol start="2">
+<li>怎么记住9个隐式对象？<br>service方法中的形参就有request和response<br>域对象这里除去request和response外有ServletContext类型对应的application，还有session，还有pageContext<br>config（ServletConfig类型的配置信息），out（页面输出的），exception（错误页面的异常对象），page（当前页面翻译成servlet后的实例）</li>
+</ol>
+<ol start="3">
+<li>out对象<br>out的类型：JspWriter（什么Writer不重要，重要的是Writer）<br>out作用就是向客户端输出内容——–out.write()<br>out缓冲区默认8kb，可以设置成0，代表关闭out缓冲区，内容直接写到response缓冲区</li>
+</ol>
+<p>向页面输出的几种方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	aaa</span><br><span class="line">	&lt;%</span><br><span class="line">		out.write(&quot;bbb&quot;);</span><br><span class="line">		response.getWriter().write(&quot;ccc&quot;);</span><br><span class="line">	%&gt;</span><br><span class="line">	&lt;%=&quot;ddd&quot;%&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>页面输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">顺序是ccc aaa bbb ddd</span><br></pre></td></tr></table></figure>
+
+<p>上面几种方式，被翻译成servlet后aaa和ddd都被翻译成out.write(）输出，bbb是手动写的out.write()，这几个输出方式是一样的,通过out输出的会将数据放到out缓冲区，response的会放到response缓冲区，然后out缓冲区中的数据再被放到response缓冲区中，然后tomcat默认从response缓冲区中拿数据。所以先输出response中原有的，再输出从out缓冲区中后放入的，如果在page指令中设置了buffer为0kb，那么out输出的数据就不会进入out缓冲区，直接进入response，所以会按照从上到下的顺序有序的输出aaa bbb ccc ddd<br><img src="/2019/07/17/jsp/out%E7%BC%93%E5%86%B2%E5%8C%BA.png" alt="out缓冲区"></p>
+<ol start="4">
+<li>pageContext<br>代表的是当前页的一个上下文，不和page一样，page代表的是当前页的这个对象（翻译后的servlet对象），pageContext封装的是当前页的其他信息。</li>
+</ol>
+<p>jsp页面的上下文对象，作用如下：</p>
+<ul>
+<li>pageContext是一个域对象（作用范围当前页，所以也可以定义变量而不用该域对象,这个不是主要）<br>setAttribute(String name,Object obj)<br>getAttribute(String name)<br>removeAttribute(String name)</li>
+</ul>
+<p>   pageContext可以向指定的其他域中存取数据（主要）：<br>   可能觉得没什么用，因为我们直接就可以往想要的域中存取，没必要通过pageContext对象，但是如果有一个方法参数是pageContext,request,session,application这四个域对象呢？，传四个觉得太多，我们可以传一个pageContext全解决了。<br>   setAttribute(String name,Object obj,int scope)<br>   getAttribute(String name,int scope)<br>   removeAttribute(String name,int scope)<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	//使用pageContext向request域存数据</span><br><span class="line">	request.setAttribute(&quot;name&quot;,&quot;zhangsan&quot;);</span><br><span class="line">	//以下这个方法一样效果</span><br><span class="line">	pageContext.setAttribute(&quot;name&quot;,&quot;lisi&quot;,PageContext.REQUEST_SCOPE);</span><br><span class="line"></span><br><span class="line">	pageContext.setAttribute(&quot;name&quot;,&quot;sunba&quot;);</span><br><span class="line">	pageContext.setAttribute(&quot;name&quot;,&quot;lisi&quot;,PageContext.SESSION_SCOPE);</span><br><span class="line">	pageContext.setAttribute(&quot;name&quot;,&quot;lisi&quot;,PageContext.APPLICATION_SCOPE);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%=request.getAttribute(&quot;name&quot;)%&gt;</span><br><span class="line">&lt;%=pageContext.getAttribute(&quot;name&quot;,PageContext.REQUEST_SCOPE)%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- findAttribute会从小到大搜索域的范围中的name --&gt;</span><br><span class="line">&lt;!-- 习惯叫pageContext域为page域 --&gt;</span><br><span class="line">&lt;!-- page域&lt;request域&lt;session域&lt;application域 --&gt;</span><br><span class="line">&lt;%=pageContext.fingAttribute(&quot;name&quot;)%&gt;</span><br></pre></td></tr></table></figure></p>
+<p>   <font color="red">findAttribute(String name)<br>   —依次从pageContext域，request域，session域，application域中获取属性，在某个域中获取后将不在向后寻找</font></p>
+<ul>
+<li>可以获得其他8大隐式对象<br>例如：<br>pageContext.getRequest()<br>pageContext.getSession()<br>作用和前面一样，只传一个pageContext就可以获得其他的隐式对象</li>
+</ul>
+<h3 id="关于四种域对象的总结"><a href="#关于四种域对象的总结" class="headerlink" title="关于四种域对象的总结"></a>关于四种域对象的总结</h3><p>jsp的四个域对象的作用范围</p>
+<p>page域（pageContext）：只能作用于当前jsp页面，既不能用来做做转发的数据分享，也不能做重定向的数据分享</p>
+<p>request域：只能作用于同一个请求的数据共享，所以只能在请求的转发中使用</p>
+<p>session域：只能作用于一次对话中共享数据（一次对话：用户打开浏览器，浏览多个web站点后，关闭该浏览器），转发和重定向都可以使用</p>
+<p>application域（ServletContext）：只能在同一个web应用中使用。（全局的）</p>
+<h3 id="jsp的标签（动作）"><a href="#jsp的标签（动作）" class="headerlink" title="jsp的标签（动作）"></a>jsp的标签（动作）</h3><ol>
+<li>页面包含（动态包含）：<code>&lt;jsp:include page=&quot;被包含的页面&quot;/&gt;</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1&gt;this is include1 page&lt;/h1&gt;</span><br><span class="line">	&lt;!-- 包含include2 --&gt;</span><br><span class="line">	&lt;jsp:include page=&quot;/include2.jsp&quot;&gt;&lt;/jsp:include&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>静态与动态包含区别：</p>
+<p><img src="/2019/07/17/jsp/%E9%9D%99%E6%80%81%E4%B8%8E%E5%8A%A8%E6%80%81%E5%8C%85%E5%90%AB%E5%8C%BA%E5%88%AB.png" alt="静态与动态包含区别"></p>
+<ol start="2">
+<li>请求转发：<code>&lt;jsp:forword page=&quot;要转发的资源&quot;/&gt;</code></li>
+</ol>
+<p><code>&lt;jsp:forword page=&quot;/forward2.jsp&quot;&gt;&lt;/jsp:forward&gt;</code></p>
+<!DOCTYPE html>
+<html>
+   <head><meta name="generator" content="Hexo 3.9.0">
+      <meta charset="utf-8">
+      <title></title>
+      <style type="text/css">
+         body{
+            /*background:url(/images/背景.jpg) no-repeat fixed;*/
+            background-color: white;
+         }
+      </style>
+   </head>
+   <body></body>
+</html>
     
   </div>
 
@@ -257,7 +434,7 @@ ga('send', 'pageview');
     <a class="show pull-left" href="/2019/07/15/会话技术/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="hide pull-right" href="/">
+    <a class="show pull-right" href="/2019/07/17/正则表达式/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
