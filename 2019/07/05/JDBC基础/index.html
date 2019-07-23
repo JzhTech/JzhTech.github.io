@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/05/JDBC基础/%E6%B3%A8%E5%86%8C%E9%A9%B1%E5%8A%A8.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/05/JDBC基础/SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E7%99%BB%E5%BD%95%E6%A1%88%E4%BE%8B.JPG">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/05/JDBC基础/%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB.png">
-<meta property="og:updated_time" content="2019-07-06T14:28:58.555Z">
+<meta property="og:updated_time" content="2019-07-23T08:12:36.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC基础">
 <meta name="twitter:description" content="JDBC概念和数据库驱动程序 JDBC(Java DataBase Connectivity，java数据库连接)是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问，它由一组用Java语言编写的类和接口组成。是Java访问数据库的标准规范。  JDBC提供了一种基准，据此可以构建更高级的工具和接口，是数据库开发人员能够编写数据库应用程序。  JDBC需要连接驱动，驱动是两">
@@ -361,25 +361,7 @@ ga('send', 'pageview');
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package jdbcTest;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.PreparedStatement;</span><br><span class="line">import java.sql.ResultSet;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line"></span><br><span class="line">public class TestJDBCUtils &#123;</span><br><span class="line">	public static void main(String[] args) throws SQLException &#123;</span><br><span class="line">		Connection con = JDBCUtils.getConnection();</span><br><span class="line">		PreparedStatement pst = con.prepareStatement(&quot;select sname from sort&quot;);</span><br><span class="line">		ResultSet rs = pst.executeQuery();</span><br><span class="line">		while(rs.next())&#123;</span><br><span class="line">			System.out.println(rs.getString(&quot;sname&quot;));</span><br><span class="line">		&#125;</span><br><span class="line">		JDBCUtils.close(con, pst, rs);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<!DOCTYPE html>
-<html>
-    <head><meta name="generator" content="Hexo 3.9.0">
-        <meta charset="utf-8">
-        <title></title>
-        <style type="text/css">
-            body{
-                background:black url(/images/nic1.png) no-repeat fixed;
-            }
-            .article-content p,.content.content-post .article-header .post-title,.article-content ol, .article-content ul{
-                color:white;
-            }
-            .article-content h3,.article-content strong{
-                color: deepskyblue;
-            }
-        </style>
-    </head>
-    <body></body>
-</html>
+
     
   </div>
 

@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/%E9%A1%B5%E9%9D%A2%E5%8C%85%E5%90%AB.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/out%E7%BC%93%E5%86%B2%E5%8C%BA.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/17/jsp/%E9%9D%99%E6%80%81%E4%B8%8E%E5%8A%A8%E6%80%81%E5%8C%85%E5%90%AB%E5%8C%BA%E5%88%AB.png">
-<meta property="og:updated_time" content="2019-07-21T07:07:28.363Z">
+<meta property="og:updated_time" content="2019-07-23T08:12:49.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsp">
 <meta name="twitter:description" content="jsp的简介 servlet中输出一个html页面很繁琐： 12345678PrintWriter out = response.getWriter();out.write(&amp;quot;&amp;lt;html&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;head&amp;gt;&amp;quot;);out.write(&amp;quot;&amp;lt;/head&amp;gt;&amp;quot;);out.write(&amp;quo">
@@ -259,9 +259,9 @@ ga('send', 'pageview');
 </li>
 </ol>
 <ol start="4">
-<li>jsp的指令(3个)<br>jsp的指令是指导jsp翻译和运行的命令，jsp包括三大指令：</li>
-<li>page指令—属性最多的指令(实际)<br>属性最多的一个指令，根据不同的属性，知道整个页面特性<br>格式:&lt;%@ page 属性名1=”属性值1” 属性名2=”属性值2”…%&gt;<br>常用属性如下：</li>
-</ol>
+<li><p>jsp的指令(3个)<br>jsp的指令是指导jsp翻译和运行的命令，jsp包括三大指令：</p>
+<ol>
+<li><p>page指令—属性最多的指令(实际开发中page指令默认，我们不用写)<br>属性最多的一个指令，根据不同的属性，指导整个页面特性<br>格式:&lt;%@ page 属性名1=”属性值1” 属性名2=”属性值2”…%&gt;<br>常用属性如下：</p>
 <p>language:jsp脚本中可以嵌入的语言种类</p>
 <p>pageEncoding:当前jsp文件本身的编码</p>
 <p>contentType:response.setContentType(“text/html;charset=utf-8”);</p>
@@ -274,13 +274,14 @@ ga('send', 'pageview');
 
 <p><strong>注意：errorPage只能配置500的错误，404不行，因为404连该页面都找不到，如果要404的错误页面的话，可以再web.xml中配置web应用的全局的错误页面</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;error-page&gt;</span><br><span class="line">	&lt;error-code&gt;404&lt;/error-code&gt;</span><br><span class="line">	&lt;location&gt;/error.jsp&lt;/location&gt;</span><br><span class="line">&lt;/error-page&gt;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>include指令<br>页面包含(静态包含)指令，可以将一个jsp页面包含到另一个jsp页面中<br>格式：&lt;%@ include file=”被包含的jsp地址”%&gt;</li>
-</ol>
+</li>
+<li><p>include指令<br>页面包含(静态包含)指令，可以将一个jsp页面包含到另一个jsp页面中<br>格式：&lt;%@ include file=”被包含的jsp地址”%&gt;</p>
 <p><img src="/2019/07/17/jsp/%E9%A1%B5%E9%9D%A2%E5%8C%85%E5%90%AB.png" alt="页面包含"></p>
-<ol start="3">
-<li>taglib指令<br>在jsp页面中引入标签库(jstl标签库、struts2标签库)<br>格式：&lt;%@ taglib uri=”标签库地址” prefix=”前缀”%&gt;</li>
+</li>
+<li><p>taglib指令<br>在jsp页面中引入标签库(jstl标签库、struts2标签库)<br>格式：&lt;%@ taglib uri=”标签库地址” prefix=”前缀”%&gt;</p>
+</li>
+</ol>
+</li>
 </ol>
 <h3 id="jsp内置-隐式对象-9个-——-笔试面试题"><a href="#jsp内置-隐式对象-9个-——-笔试面试题" class="headerlink" title="jsp内置/隐式对象(9个)——-笔试面试题"></a>jsp内置/隐式对象(9个)——-笔试面试题</h3><ol>
 <li>是什么？<br>就是&lt;%…%&gt;中可以直接使用的对象。<br>jsp被翻译成servlet之后，&lt;%…%&gt;中的代码会被放在service方法中，然而service方法外面，也就是成员变量已经定义并初始化完毕了这9个对象，所以我们在jsp脚本中可以直接使用这9个对象</li>
@@ -377,24 +378,12 @@ ga('send', 'pageview');
 
 <p>静态与动态包含区别：</p>
 <p><img src="/2019/07/17/jsp/%E9%9D%99%E6%80%81%E4%B8%8E%E5%8A%A8%E6%80%81%E5%8C%85%E5%90%AB%E5%8C%BA%E5%88%AB.png" alt="静态与动态包含区别"></p>
+<p>动态：先编译运行，再组合，结果有两个编译文件，如果jsp1中的对象引入是在jsp2中写的，使用jsp1动态包含jsp2会报错，因为是单独编译的，先编译jsp1的时候对象的类引入是在jsp2中写的，此时编译不到所以导致jsp1中的对象不存在报错。<br>静态：是编译前将jsp2的代码放进jsp1，再编译jsp1文件，结果只有一个编译文件，这样就解决的动态包含的那个对象出错问题。</p>
 <ol start="2">
 <li>请求转发：<code>&lt;jsp:forword page=&quot;要转发的资源&quot;/&gt;</code></li>
 </ol>
 <p><code>&lt;jsp:forword page=&quot;/forward2.jsp&quot;&gt;&lt;/jsp:forward&gt;</code></p>
-<!DOCTYPE html>
-<html>
-   <head><meta name="generator" content="Hexo 3.9.0">
-      <meta charset="utf-8">
-      <title></title>
-      <style type="text/css">
-         body{
-            /*background:url(/images/背景.jpg) no-repeat fixed;*/
-            background-color: white;
-         }
-      </style>
-   </head>
-   <body></body>
-</html>
+
     
   </div>
 

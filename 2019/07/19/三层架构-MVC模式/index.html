@@ -25,7 +25,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/19/三层架构-MVC模式/MVC%E5%92%8C%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%85%B3%E7%B3%BB.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/19/三层架构-MVC模式/%E4%BD%BF%E7%94%A8%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87.png">
-<meta property="og:updated_time" content="2019-07-21T07:22:57.932Z">
+<meta property="og:updated_time" content="2019-07-23T08:13:16.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三层架构&amp;MVC模式">
 <meta name="twitter:description" content="javaEE的开发模式 什么是模式模式在开发过程中总结出的”套路”，总结出的一套约定俗成的设计模式  javaEE经历的模式model1模式： 技术组成：jsp+javaBean(java类，就是实体类) 特点：在jsp页面既写java代码，又写html页面输出代码，代码冗杂 model1的弊端：随着业务的复杂性 导致jsp页面比较混乱，所以现在不用了   model2模式：    技术组成：js">
@@ -253,20 +253,7 @@ ga('send', 'pageview');
 <p>比如：客户端发送一个表单验证请求，servlet接收，与客户端交互的肯定是web层，所以servlet在web层，servlet获取user和password信息，封装到一个user对象，就是javaBeam然后传到service层做业务逻辑，service层把user中数据放到数据库就传到dao层数据操作的代码放入数据库，然后成功再逐层返回到web层，servlet就会指派jsp页面告诉客户端您注册成功。</p>
 <p><strong>所以MVC和三层架构不是一回事，根本没有关系，MVC是web开发的设计模式，三层架构是javaEE开发的设计模式，但是我们在三层架构的web层开发的时候我们用到了servlet，javaBean，jsp，正好不约而同的这三个技术组合到一起他就是MVC设计模式，所以<font color="red">在这里</font>我们可以认为MVC属于三层架构的web层技术</strong></p>
 <p>最后包的划分：<br><img src="/2019/07/19/三层架构-MVC模式/%E4%BD%BF%E7%94%A8%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87.png" alt="使用三层架构的项目组织"></p>
-<!DOCTYPE html>
-<html>
-   <head><meta name="generator" content="Hexo 3.9.0">
-      <meta charset="utf-8">
-      <title></title>
-      <style type="text/css">
-         body{
-            /*background:url(/images/背景.jpg) no-repeat fixed;*/
-            background-color: white;
-         }
-      </style>
-   </head>
-   <body></body>
-</html>
+
     
   </div>
 

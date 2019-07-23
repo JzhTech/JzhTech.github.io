@@ -403,30 +403,7 @@ ga('send', 'pageview');
 
 
 
-<script src="/js/jquery-1.12.4.js"></script>
-<script type="text/javascript">
-  var $body = $("body");
-  var color = "#";
-  var addColor = "123456789abcdef";
-  var timer = setInterval(function(){
-    for(var i =0;i<20;i++){
-      var $top = Math.round(Math.random()*720) + "px";
-      var $left = Math.round(Math.random()*1500) + "px";
-      do{
-        color="#";
-        for(var j =0;j<6;j++){
-          color+=addColor.charAt(Math.round(Math.random()*16));
-        }
-      }while(color.length!=7);
-      var $dot = $("<div class='cc'></div>");
-      var time = [800,1000,1200,1400,1600,1800];
-      $dot.css({top:$top,left:$left,backgroundColor:color}).animate({height:10,width:10,borderRadius:10},time[Math.round(Math.random()*7)],"swing",function(){
-        $(this).remove();
-      });
-      $body.append($dot);
-    }
-  },1000);
-</script>
+
 
   <div class="modal" id="modal">
   <span id="cover" class="cover hide"></span>

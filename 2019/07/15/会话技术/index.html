@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/15/会话技术/Cookie%E5%9B%BE%E8%A7%A3.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/15/会话技术/%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E4%B8%8A%E6%AC%A1%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4.png">
 <meta property="og:image" content="https://jzhtech.github.io/2019/07/15/会话技术/session%E5%9B%BE%E8%A7%A3.png">
-<meta property="og:updated_time" content="2019-07-17T04:06:59.197Z">
+<meta property="og:updated_time" content="2019-07-23T08:13:21.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会话技术">
 <meta name="twitter:description" content="简介 存储客户端的状态 由一个问题引出会话技术的必要性，例如网站的购物系统，用户将购买的商品信息存储到哪里？因为Http协议是无状态的，也就是说每个客户访问服务端资源时，服务器并不知道该客户端是谁，所以需要会话技术识别客户端的状态，会话技术是帮助服务器记住客户端状态（区分客户端） 更通俗的例子： 通常我们浏览一个网站，比如淘宝，我们在未登录的状态下，加购了商品，那么我们的客户端就会显示我们加购了哪">
@@ -341,19 +341,7 @@ ga('send', 'pageview');
 </ol>
 <h3 id="JSESSIONID的持久化"><a href="#JSESSIONID的持久化" class="headerlink" title="JSESSIONID的持久化"></a>JSESSIONID的持久化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = request.getSession();</span><br><span class="line">session.setAttribute(&quot;name&quot;,&quot;jerry&quot;);</span><br><span class="line">String id = seesion.getId();//该session对象的编号ID</span><br><span class="line">//手动创建一个存储JSESSIONID的Cookie，为该cookie设置持久化时间</span><br><span class="line">Cookie cookie = new Cookie(&quot;JSESSIONID&quot;,id);</span><br><span class="line">cookie.setPath(&quot;/WEB01/&quot;);</span><br><span class="line">cookie.setMaxAge(60*10);</span><br><span class="line">response.addCookie(cookie);</span><br><span class="line">response.getWriter().write(&quot;JSESSIONID:&quot;+id);</span><br></pre></td></tr></table></figure>
 
-<!DOCTYPE html>
-<html>
-   <head><meta name="generator" content="Hexo 3.9.0">
-      <meta charset="utf-8">
-      <title></title>
-      <style type="text/css">
-         body{
-            background:url(/images/背景.jpg) no-repeat fixed;
-         }
-      </style>
-   </head>
-   <body></body>
-</html>
+
     
   </div>
 
