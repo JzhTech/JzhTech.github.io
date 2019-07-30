@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="泽恒">
 <meta property="og:description" content="EL技术 EL表达式概述EL(Express Lanuage)表达式可以嵌入在jsp页面内部，减少jsp脚本的编写，EL出现的目的是要替代jsp页面中脚本的编写。  EL从域中取出数据（EL最重要的作用）EL最主要的作用是获得四大域中的数据，格式${EL表达式}   示例： 12jsp脚本：&amp;lt;%=request.getAttribute(&amp;quot;name&amp;quot;)%&amp;gt;EL表达式">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T08:12:27.414Z">
+<meta property="og:updated_time" content="2019-07-30T02:06:21.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="el&amp;jstl">
 <meta name="twitter:description" content="EL技术 EL表达式概述EL(Express Lanuage)表达式可以嵌入在jsp页面内部，减少jsp脚本的编写，EL出现的目的是要替代jsp页面中脚本的编写。  EL从域中取出数据（EL最重要的作用）EL最主要的作用是获得四大域中的数据，格式${EL表达式}   示例： 12jsp脚本：&amp;lt;%=request.getAttribute(&amp;quot;name&amp;quot;)%&amp;gt;EL表达式">
@@ -185,7 +185,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#EL技术"><span class="toc-text">EL技术</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#EL技术"><span class="toc-text">EL技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EL的内置对象11个-不重要了，我们现在jsp页面只显示，不写java代码了"><span class="toc-text">EL的内置对象11个(不重要了，我们现在jsp页面只显示，不写java代码了)</span></a></li></ol>
   </div>
 
 
@@ -239,6 +239,57 @@ ga('send', 'pageview');
 </ol>
 <p>示例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jsp脚本：&lt;%=request.getAttribute(&quot;name&quot;)%&gt;</span><br><span class="line">EL表达式替代上面的脚本$&#123;requestScope.name&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   request.setAttribute(&quot;company&quot;,&quot;kkk&quot;);</span><br><span class="line"></span><br><span class="line">   List&lt;User&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">   User user = new User();</span><br><span class="line">   user.setId(2);</span><br><span class="line">   user.setName(&quot;lisi&quot;);</span><br><span class="line">   list.add(user);</span><br><span class="line">   application.setAttribute(&quot;list&quot;,list);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 脚本法取出域中的值 --&gt;</span><br><span class="line">&lt;%=request.getAttribute(&quot;company&quot;)%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">   List&lt;User&gt; appList = (User)application.getAttribute(&quot;list&quot;);</span><br><span class="line">   out.write(appList.get(0).getName());</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 使用EL表达式获得域中的值(在EL表达式中，获取域中的属性等同于去除了get) --&gt;</span><br><span class="line">$&#123;requestScope.company&#125;</span><br><span class="line">$&#123;applicationScope.list[0].name&#125;</span><br></pre></td></tr></table></figure>
+
+<p>EL获得pageContext域中的值：${pageContextScope.key};</p>
+<p>EL获得request域中的值：${requestScope.key};</p>
+<p>EL获得session域中的值：${sessionScope.key};</p>
+<p>EL获得application域中的值：${applicationScope.key};</p>
+<p><strong>EL从四个域中获得某个值${key}:</strong><br>    <font color="red">—同样是依次从pageContext域，request域，session域，application域中获取属性，在某个域中获取后将不在</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 使用el表达式全域查找 --&gt;</span><br><span class="line">$&#123;company&#125;</span><br><span class="line">$&#123;user.name&#125;</span><br><span class="line">$&#123;list[0].name&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="EL的内置对象11个-不重要了，我们现在jsp页面只显示，不写java代码了"><a href="#EL的内置对象11个-不重要了，我们现在jsp页面只显示，不写java代码了" class="headerlink" title="EL的内置对象11个(不重要了，我们现在jsp页面只显示，不写java代码了)"></a>EL的内置对象11个(不重要了，我们现在jsp页面只显示，不写java代码了)</h3><p>pageScope,requestScope,sessionScope,applicationScope<br>——-获取JSP中域对象中的数据<br><strong>以上的XXXScope和XXX不一样，比如request表示的是request对象，是jsp的内置对象，requestScope表示的是el的内置对象request域，request对象范围更大，因为对象中可以包含很多，其他对象等等</strong></p>
+<p>param,paramValues  -接收参数<br>      相当于request.getParameter()  request.getParameterValues()</p>
+<p>header,headerValues -获取请求头信息<br>      相当于request.getHeader(name)</p>
+<p>initParam  -获取全局初始化参数<br>      相当于this.getServletContext().getInitParameter(name)</p>
+<p>cookie  -WEB开发中的cookie<br>      相当于request.getCookies()—-cookie.getName()—-cookie.getValue()</p>
+<p><font color="red">pageContext   -WEB开发中的pageContext<br>      pageContext获得其他八大对象<br></font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">获得表单的参数</span><br><span class="line">&lt;%</span><br><span class="line">   request.getParameter(&quot;username&quot;);</span><br><span class="line">   //...</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">用EL的隐式对象</span><br><span class="line">$&#123;param.username&#125;</span><br><span class="line"></span><br><span class="line">用EL获得请求头，如果参数有-，则这样写(这种方式通用)：</span><br><span class="line">$&#123;header[&quot;User-Agent&quot;]&#125;</span><br><span class="line"></span><br><span class="line">获得cookie</span><br><span class="line">$&#123;cookie.name.value&#125;----cookie.name,或取的是cookie对象</span><br></pre></td></tr></table></figure>
+
+<p>通过EL表达式获得request对象（注意是request对象，不是request域）<br>${requestScope}—这是错的，这获取的是el的对象<br>所以${pageContext.request}</p>
+<font color="red">
+   ${pageContext.request.contextPath}
+   通过el的内置对象pageContext获得jsp的内置对象request，获得web应用名称
+</font>
+
+
+
+
+
+
+
+
+<!-- 
+注解
+tomcat数据源
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
