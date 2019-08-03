@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>ajax | 泽恒</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="ajax,">
+  
+
+  <meta name="description" content="AJAX编程 即 Asynchronous Javascript And XML（Asynchronous是异步的意思），AJAX不是一门新的语言，而是对现有技术的综合利用。   本质是在HTTP协议的基础上以异步的方式与服务器进行通信。  异步（Asynchronous） 指某段程序执行时不会阻塞其他程序执行，其表现形式为 程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。  其优势在于不阻">
+<meta name="keywords" content="ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax">
+<meta property="og:url" content="https://JzhTech.github.io/2019/08/03/ajax/index.html">
+<meta property="og:site_name" content="泽恒">
+<meta property="og:description" content="AJAX编程 即 Asynchronous Javascript And XML（Asynchronous是异步的意思），AJAX不是一门新的语言，而是对现有技术的综合利用。   本质是在HTTP协议的基础上以异步的方式与服务器进行通信。  异步（Asynchronous） 指某段程序执行时不会阻塞其他程序执行，其表现形式为 程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。  其优势在于不阻">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://jzhtech.github.io/2019/08/03/ajax/%E7%83%A7%E6%B0%B4%E6%A1%88%E4%BE%8B.PNG">
+<meta property="og:image" content="https://jzhtech.github.io/2019/08/03/ajax/%E5%BC%82%E6%AD%A5.PNG">
+<meta property="og:image" content="https://jzhtech.github.io/2019/08/03/ajax/api.PNG">
+<meta property="og:updated_time" content="2019-08-03T06:11:56.445Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ajax">
+<meta name="twitter:description" content="AJAX编程 即 Asynchronous Javascript And XML（Asynchronous是异步的意思），AJAX不是一门新的语言，而是对现有技术的综合利用。   本质是在HTTP协议的基础上以异步的方式与服务器进行通信。  异步（Asynchronous） 指某段程序执行时不会阻塞其他程序执行，其表现形式为 程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。  其优势在于不阻">
+<meta name="twitter:image" content="https://jzhtech.github.io/2019/08/03/ajax/%E7%83%A7%E6%B0%B4%E6%A1%88%E4%BE%8B.PNG">
+
+  
+
+  
+    <link rel="icon" href="/images/泽.jpg">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX编程"><span class="toc-text">AJAX编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异步（Asynchronous）"><span class="toc-text">异步（Asynchronous）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest-（javascript）"><span class="toc-text">XMLHttpRequest （javascript）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest（get-amp-post差异）"><span class="toc-text">XMLHttpRequest（get&amp;post差异）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest-status"><span class="toc-text">XMLHttpRequest(status)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest-同步-amp-异步"><span class="toc-text">XMLHttpRequest(同步&amp;异步)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest-传参"><span class="toc-text">XMLHttpRequest(传参)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest-API详解"><span class="toc-text">XMLHttpRequest(API详解)</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-ajax" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">ajax</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.08.03</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Jzh</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/AJAX编程/">AJAX编程</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="AJAX编程"><a href="#AJAX编程" class="headerlink" title="AJAX编程"></a>AJAX编程</h2><blockquote>
+<p>即 Asynchronous Javascript And XML（Asynchronous是异步的意思），AJAX不是一门新的语言，而是对现有技术的综合利用。</p>
+</blockquote>
+<blockquote>
+<p>本质是在HTTP协议的基础上以异步的方式与服务器进行通信。</p>
+</blockquote>
+<h3 id="异步（Asynchronous）"><a href="#异步（Asynchronous）" class="headerlink" title="异步（Asynchronous）"></a>异步（Asynchronous）</h3><ul>
+<li>指某段程序执行时不会阻塞其他程序执行，其<font color="red">表现形式</font>为 程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。</li>
+</ul>
+<p><font color="red">其优势在于不阻塞程序的执行，从而提升整体执行效率。</font></p>
+<p><img src="/2019/08/03/ajax/%E7%83%A7%E6%B0%B4%E6%A1%88%E4%BE%8B.PNG" alt="案例"></p>
+<p>上图中方式1，就是同步，方式3就是异步，所以为了更好明白，看下图：</p>
+<p><img src="/2019/08/03/ajax/%E5%BC%82%E6%AD%A5.PNG" alt="案例"></p>
+<p>现实生活中的一个例子：</p>
+<p>打电话是同步，你和某个人通话，其他人是不能打进来的,被堵塞了，发消息是异步，你和某个人发消息，别人也是能发消息给你收到的。</p>
+<p><font color="red"><b>所以异步是我们程序在执行中的一种方式而已</b></font></p>
+<p><font color="red"><b>XMLHttpRequest是可以以异步方式处理的程序</b></font></p>
+<p><strong>扩展：讲到同步异步，就要说到线程安全性，同步是线程安全的，但是效率低，异步线程不安全，但是效率高。</strong></p>
+<h3 id="XMLHttpRequest-（javascript）"><a href="#XMLHttpRequest-（javascript）" class="headerlink" title="XMLHttpRequest （javascript）"></a>XMLHttpRequest （javascript）</h3><blockquote>
+<p>浏览器内建对象是浏览器自带的，已经有的，不需要我们自己创建的，这种对象就是浏览器用来给我们提供功能的，比如：</p>
+</blockquote>
+<p><code>&lt;script&gt; var date = new Date(); &lt;/script&gt;</code></p>
+<blockquote>
+<p>Date就是一个内建对象，js直接可以使用的，而XMLHttpRequest也同样是。</p>
+</blockquote>
+<p><strong>XMLHttpRequest是一个浏览器内置(内建)对象，用于在<font color="red">后台</font>与服务器<font color="red">通信</font>（交换数据），由此我们便可以实现对网页的部分更新，而不是刷新整个页面。</strong></p>
+<ul>
+<li>简而言之：XMLHttpRequest是用来帮我们发送请求的，下面我以post请求方式为例写一个演示，看下面的代码演示之前，首先我们得明白几个方法的含义：</li>
+</ul>
+<blockquote>
+<p>和获取日期 var date = new Date() 一样，我们获取请求也得有请求对象 var xhr = new XMLHttpRequest();</p>
+</blockquote>
+<blockquote>
+<p>该请求对象有一个属性，xhr.readyState，这个是响应码，我们的请求当前处于什么状态，他会有不同的值，具体下面会说，先知道就行。</p>
+</blockquote>
+<blockquote>
+<p>我们客户端与服务器之间的交互通过HTTP协议的，HTTP协议规定了请求和响应的格式。所以我们的请求要有请求行、请求头、请求体（get方式没有请求体），所以该请求创建后要设置它们。</p>
+</blockquote>
+<p><strong>注：当以post形式提交表单的时候，请求头里会设置Content-Type：application/x-www-form-urlencoded，以get形式不需要</strong></p>
+<blockquote>
+<p>该请求对象有一个事件onreadystatechange，看名字就能明白这是监听readyState状态码变化的事件，也就是说，readyState值每变化一个就会触发一次该事件。</p>
+</blockquote>
+<blockquote>
+<p>该请求有一个属性xhr.responseText，请求发送后，服务器会给响应，这是获取响应体的属性。</p>
+</blockquote>
+<ul>
+<li><p>先看该对象的API:<br><img src="/2019/08/03/ajax/api.PNG" alt="API"></p>
+</li>
+<li><p>接下来再看post方式请求的代码演示：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	//创建一个请求对象</span><br><span class="line">	var xhr = new XMLHttpRequest();</span><br><span class="line">	</span><br><span class="line">	console.log(xhr.readyState);</span><br><span class="line">	</span><br><span class="line">	//设置请求行</span><br><span class="line">	xhr.open(&apos;post&apos;,&apos;8-1.html&apos;);</span><br><span class="line">	</span><br><span class="line">	console.log(xhr.readyState);</span><br><span class="line">	</span><br><span class="line">	//设置请求头（post方式才有的，背下来别问为啥）</span><br><span class="line">	xhr.setRequestHeader(&apos;Content-type&apos;,&apos;application/x-www/form-urlencoded&apos;);</span><br><span class="line">	</span><br><span class="line">	console.log(xhr.readyState);</span><br><span class="line">	</span><br><span class="line">	//设置请求主体</span><br><span class="line">	xhr.send(&apos;username=jhh&amp;pass=123&apos;);</span><br><span class="line">	</span><br><span class="line">	console.log(xhr.readyState);</span><br><span class="line">	</span><br><span class="line">	//接收服务器响应</span><br><span class="line">	xhr.onreadystatechange = function()&#123;</span><br><span class="line">		</span><br><span class="line">		console.log(xhr.readyState);</span><br><span class="line">		</span><br><span class="line">		if(xhr.readyState==4)&#123;</span><br><span class="line">			//console.log(&apos;响应结束&apos;);</span><br><span class="line">			</span><br><span class="line">			//获得浏览器响应体的方法</span><br><span class="line">			//xhr.responseText</span><br><span class="line">			console.log(xhr.responseText);</span><br><span class="line">			</span><br><span class="line">			//通过DOM操作放到页面上</span><br><span class="line">			document.querySelector(&apos;#result&apos;).innerHTML=xhr.responseText;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="XMLHttpRequest（get-amp-post差异）"><a href="#XMLHttpRequest（get-amp-post差异）" class="headerlink" title="XMLHttpRequest（get&amp;post差异）"></a>XMLHttpRequest（get&amp;post差异）</h3><ul>
+<li>get方式请求代码演示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	//创建一个请求对象</span><br><span class="line">	var xhr = new XMLHttpRequest();</span><br><span class="line">	</span><br><span class="line">	//设置请求行</span><br><span class="line">	xhr.open(&apos;get&apos;,&apos;8-1.html&apos;);\</span><br><span class="line">	</span><br><span class="line">	//设置请求头(get方式没有)</span><br><span class="line">	//xhr.setRequestHeader(&apos;Content-type&apos;,&apos;application/x-www/form-urlencoded&apos;);</span><br><span class="line">	</span><br><span class="line">	//设置请求体（get方式没有）</span><br><span class="line">	xhr.send(null);//xhr.send();也行</span><br><span class="line">	</span><br><span class="line">	//接收服务器响应</span><br><span class="line">	xhr.onreadystatechange = function()&#123;</span><br><span class="line">		</span><br><span class="line">		if(xhr.readyState==4)&#123;</span><br><span class="line">			var result = xhr.responseText;</span><br><span class="line">			</span><br><span class="line">			console.log(result);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>扩展：我们post方式设置了请求头xhr.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);而get方式没有，这是为什么呢？</strong></p>
+<ul>
+<li><p>首先，我们以前解决request和response中文乱码的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">post方式提交的中文乱码问题解决：request.setCharacterEncoding(&quot;utf-8&quot;); 设置服务器接收request请求是以utf-8码表解码</span><br><span class="line"></span><br><span class="line">get方式和post方式提交都可以用的解决中文乱码方式：String username= new String(request.getParameter(&quot;username&quot;).getBytes(&quot;ISO8859-1&quot;),&quot;utf-8&quot;);</span><br><span class="line"></span><br><span class="line">服务器响应客户端中文乱码解决：</span><br><span class="line">				方式一：</span><br><span class="line">							1.设置response查询的码表为utf-8而不是ISO8859-1</span><br><span class="line">								response.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line">							2.通过一个头Content-Type告知客户端使用何种码表</span><br><span class="line">								response.setHeader(&quot;Content-Type&quot;,&quot;text/html;charset=utf-8&quot;);</span><br><span class="line"></span><br><span class="line">				方式二：</span><br><span class="line">							该方式是在方式一的基础上融合的</span><br><span class="line">							response.setContentType(&quot;text/html;charset=utf-8&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>和以前的解决乱码方式一样，这里post方式请求设置请求头是告知服务器我们是以’application/x-www-form-urlencoded’的格式编码的，你服务器也要以这个格式去解码我们的请求体，然而get方式没有请求体，所以也不用去告诉他了，所以可写可不写。同样，就算是post方式请求，如果我们请求体没有内容，也可以不写。</p>
+</li>
+</ul>
+<h3 id="XMLHttpRequest-status"><a href="#XMLHttpRequest-status" class="headerlink" title="XMLHttpRequest(status)"></a>XMLHttpRequest(status)</h3><ul>
+<li>案例：</li>
+</ul>
+<p>我们访问一个不存在的页面8-1.html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var xhr = new XMLHttpRequest();</span><br><span class="line">	xhr.open(&apos;get&apos;,&apos;8-1.html&apos;);</span><br><span class="line">	xhr.send(null);</span><br><span class="line">	xhr.onreadystatechange = function()&#123;</span><br><span class="line">		</span><br><span class="line">		if(xhr.readyState==4)&#123;</span><br><span class="line">			console.log(1);</span><br><span class="line">			console.log(xhr.responseText);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>结果：我们进入了if判断中，并且返回了值。</p>
+<p>分析：虽然页面不存在，但是，服务器还是有响应给我们，不过这个响应结果是告诉我们没有该页面404，所以我们能获取到响应结果。但是，我们要的结果没有，获取到响应也没有意义，不是我们要的，而且如果我们对结果做处理可能还会出错。所以我们还要加一个判断条件（状态码为200），让我们能获取到想要的结果。</p>
+<p>处理方式：<code>if(xhr.readyState==4&amp;&amp;xhr.status==200)</code></p>
+<h3 id="XMLHttpRequest-同步-amp-异步"><a href="#XMLHttpRequest-同步-amp-异步" class="headerlink" title="XMLHttpRequest(同步&amp;异步)"></a>XMLHttpRequest(同步&amp;异步)</h3><ul>
+<li><p>首先ajax是一个异步技术，我们这里的内建对象XMLHttpRequest并不是指ajax，而是指它属于ajax技术</p>
+</li>
+<li><p>我们上面写的代码，就是一个异步的代码，他不会阻塞下面的代码运行，也就是说不管响应有没有结束，他是直接往下面运行的，同步的话，必须响应结束才能运行下面代码</p>
+</li>
+<li><p>xhr.open(‘get’,’8-1.html’);方法其实还有一个参数，是决定该请求是同步还是异步，默认是true，异步，如果xhr.open(‘get’,’8-1.html’，false);就是同步了，看代码对比：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">异步：</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var xhr = new XMLHttpRequest();</span><br><span class="line">		xhr.open(&apos;get&apos;,&apos;8-1.html&apos;,true);</span><br><span class="line">		xhr.send(null);</span><br><span class="line">		xhr.onreadystatechange = function()&#123;</span><br><span class="line">			</span><br><span class="line">			if(xhr.readyState==4&amp;&amp;xhr.status==200)&#123;</span><br><span class="line">				console.log(1);</span><br><span class="line">				console.log(xhr.responseText);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(&apos;我是异步程序后的代码&apos;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	异步方式的请求，响应还没来，就已经输出了&apos;我是异步程序后的代码&apos;了，因为他不堵塞程序运行，每次readyStatus变化就会调用事件，当readyState为4就进入判断打印出响应内容。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">同步：</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var xhr = new XMLHttpRequest();</span><br><span class="line">		xhr.open(&apos;get&apos;,&apos;8-1.html&apos;,false);</span><br><span class="line">		xhr.send(null);</span><br><span class="line">		console.log(xhr.responseText);</span><br><span class="line">		console.log(&apos;我是同步程序后的代码&apos;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	同步方式的请求，响应还没来，不会输出&apos;我是异步程序后的代码&apos;了，因为他堵塞程序运行，这里不用写事件了，因为响应不来，他会停在console.log(xhr.responseText);这里一直等待响应，只有响应有了才会执行下面的语句，所以不用监听判断了直接获取响应。</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：我们知道ajax是一项异步技术，而XMLHttpRequest只能说实现了异步，如果我们这里用它实现了同步，那么这个对象就不是ajax技术了，只能算是js的一个内建对象，它只有用了异步方式，才能算作是ajax技术。</strong></p>
+<h3 id="XMLHttpRequest-传参"><a href="#XMLHttpRequest-传参" class="headerlink" title="XMLHttpRequest(传参)"></a>XMLHttpRequest(传参)</h3><blockquote>
+<p>post方式：xhr.send(‘username=jhh&amp;age=25’);</p>
+</blockquote>
+<blockquote>
+<p>get方式：xhr.open(‘get’,’8-1.html?username=jhh&amp;age=25’);</p>
+</blockquote>
+<h3 id="XMLHttpRequest-API详解"><a href="#XMLHttpRequest-API详解" class="headerlink" title="XMLHttpRequest(API详解)"></a>XMLHttpRequest(API详解)</h3><blockquote>
+<p>xhr.open() 发起请求，可以是get、post方式</p>
+</blockquote>
+<blockquote>
+<p>xhr.setRequestHeader() 设置请求头</p>
+</blockquote>
+<blockquote>
+<p>xhr.send() 发送请求主体  get方式使用xhr.send(null)</p>
+</blockquote>
+<blockquote>
+<p>xhr.onreadyStatechange = function(){} 监听响应状态(xhr.readyState的值)</p>
+</blockquote>
+<ul>
+<li>以下状态不用记忆，只需要了解有状态变化这个概念</li>
+</ul>
+<blockquote>
+<p>xhr.readyState = 0 时，open没有调用（请求未创建）</p>
+</blockquote>
+<blockquote>
+<p>xhr.readyState = 1 时，open已调用（请求已创建）</p>
+</blockquote>
+<blockquote>
+<p>xhr.readyState = 2 时，服务器接收到头消息（xhr.setRequestHeader(…)）</p>
+</blockquote>
+<blockquote>
+<p>xhr.readyState = 3 时，客户端开始接收到响应主体</p>
+</blockquote>
+<blockquote>
+<p>xhr.readyState = 4 时，客户端接收服务器端响应完成</p>
+</blockquote>
+<blockquote>
+<p>xhr.status 表示响应码，如200</p>
+</blockquote>
+<blockquote>
+<p>xhr.statusText 表示响应信息，如OK</p>
+</blockquote>
+<blockquote>
+<p>xhr.getAllResponseHeaders() 获取全部响应头信息</p>
+</blockquote>
+<blockquote>
+<p>xhr.getResponseHeader(‘key’) 获取指定头信息</p>
+</blockquote>
+<blockquote>
+<p>xhr.responseText、xhr.responseXML 都表示响应主体</p>
+</blockquote>
+<p><strong>注：GET和POST请求方式的差异(面试题)</strong></p>
+<ol>
+<li><p>GET没有请求主体，使用xhr.send(null)</p>
+</li>
+<li><p>GET可以通过在请求URL上添加请求参数</p>
+</li>
+<li><p>POST可以通过xhr.send(‘name=jhh&amp;age=25’)</p>
+</li>
+<li><p>POST 需要设置：</p>
+<p> <code>xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);</code></p>
+</li>
+<li><p><font color="red">GET效率更好（应用多）</font></p>
+</li>
+<li><p><font color="red">GET大小限制约4K，POST则没有限制</font></p>
+</li>
+</ol>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">联系我</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，添加JzhBetter</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.jpg" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>qq扫一扫</span>
+            
+            <img src="/images/qq.jpg" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/07/27/监听器和过滤器/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '277317290454635afa73',
+  clientSecret: '78223c859304da5e8d71bfce136d436c6ff95c37',
+  repo: 'blog-comment',
+  owner: 'forsigner',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: location.pathname,
+  admin: ['forsigner'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
